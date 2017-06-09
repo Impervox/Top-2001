@@ -24,5 +24,10 @@ namespace Top2000
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //this does absolutely NOTHING!!!
+        }
     }
 }

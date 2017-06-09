@@ -81,6 +81,14 @@ namespace Top2000 {
             case 1:
             this.label = ((System.Windows.Controls.Label)(target));
             return;
+            case 2:
+            
+            #line 11 "..\..\MainWindow.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
+            
+            #line default
+            #line hidden
+            return;
             }
             this._contentLoaded = true;
         }
