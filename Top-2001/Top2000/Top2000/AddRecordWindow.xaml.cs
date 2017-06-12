@@ -23,5 +23,31 @@ namespace Top2000
         {
             InitializeComponent();
         }
+
+        private void txtPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            char c = Convert.ToChar(e.Text);
+            if (Char.IsNumber(c))
+                e.Handled = false;
+            else
+                e.Handled = true;
+
+            base.OnPreviewTextInput(e);
+        }
+
+        private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //update de songs combobox dat die alleen nummers van die artiest weergeeft.
+        }
+
+        private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //vul automatisch de artiest in cbArtiest in.
+        }
+
+        private void btnAddRecord_Click(object sender, RoutedEventArgs e)
+        {
+            //voeg record toe aan database laatste jaar.
+        }
     }
 }

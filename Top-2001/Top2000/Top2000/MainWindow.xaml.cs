@@ -91,5 +91,35 @@ namespace Top2000
         {
             txtPage.Text = 1 + "";
         }
+
+        private void btnAddRecord_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new AddRecordWindow();
+            w.Show();
+        }
+
+        private void btnAddArtist_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new AddArtistWindow();
+            w.Show();
+        }
+
+        private void btnEditArtist_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new EditArtistWindow();
+            w.Show();
+        }
+
+        private void btnAddSong_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new AddSongWindow();
+            w.Show();
+        }
+
+        private void btnEditSong_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new EditSongWindow();
+            w.Show();
+        }
     }
 }
