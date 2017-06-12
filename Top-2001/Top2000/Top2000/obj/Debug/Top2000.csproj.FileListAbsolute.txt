@@ -1,3 +1,16 @@
 D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\bin\Debug\Top2000.exe.config
 D:\School\Programmeren\Repos\Top-2001\Top-2001\Top2000\Top2000\bin\Debug\Top2000.exe.config
 C:\Users\Gebruiker\Source\Repos\Top-2001\Top-2001\Top2000\Top2000\bin\Debug\Top2000.exe.config
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\bin\Debug\Top2000.exe
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\bin\Debug\Top2000.pdb
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.csprojResolveAssemblyReference.cache
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\MainWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\App.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000_MarkupCompile.cache
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000_MarkupCompile.lref
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\MainWindow.baml
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.g.resources
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.Properties.Resources.resources
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.csproj.GenerateResource.Cache
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.exe
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.pdb
