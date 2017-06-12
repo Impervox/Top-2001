@@ -14,3 +14,5 @@ D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.Pro
 D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.csproj.GenerateResource.Cache
 D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.exe
 D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\Top2000.pdb
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\bin\Debug\ClassLibrary.dll
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\bin\Debug\ClassLibrary.pdb

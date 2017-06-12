@@ -5,6 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Top2000"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="348" Width="1000" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="dgRecords" HorizontalAlignment="Left" Margin="5,62,0,0" VerticalAlignment="Top" Height="202" Width="984" ColumnWidth="*" IsReadOnly="True"/>
+        <Button x:Name="btnAddRecord" Content="Add Record" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.328,0.544"/>
+        <Button x:Name="btnAddArtist" Content="Add Artist" HorizontalAlignment="Left" Margin="228,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnEditArtist" Content="Edit Artist" HorizontalAlignment="Left" Margin="451,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnAddSong" Content="Add Song" HorizontalAlignment="Left" Margin="674,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnEditSong" Content="Edit Song" HorizontalAlignment="Left" Margin="889,10,5,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Width="984" SelectionChanged="cbYear_SelectionChanged"/>
+        <Button x:Name="btnNext" Content=">" HorizontalAlignment="Left" Margin="674,280,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="btnNext_Click"/>
+        <Button x:Name="btnLast" Content=">>>" HorizontalAlignment="Left" Margin="889,280,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
+        <Button x:Name="btnPrevious" Content="&lt;" HorizontalAlignment="Left" Margin="228,280,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
+        <Button x:Name="btnFirst" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="5,280,0,0" VerticalAlignment="Top" Width="100" Height="23"/>
+        <TextBox x:Name="txtPage" HorizontalAlignment="Center" Height="23" Margin="472,280,472,5" TextAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" PreviewTextInput="txtPage_PreviewTextInput" TextChanged="txtPage_TextChanged"/>
+    </Grid>
 </Window>
