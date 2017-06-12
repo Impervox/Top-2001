@@ -55,13 +55,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddRecordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddSongWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditArtistWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditSongWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddArtistWindow.xaml.cs">
+      <DependentUpon>AddArtistWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordWindow.xaml.cs">
+      <DependentUpon>AddRecordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddSongWindow.xaml.cs">
+      <DependentUpon>AddSongWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EditArtistWindow.xaml.cs">
+      <DependentUpon>EditArtistWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditSongWindow.xaml.cs">
+      <DependentUpon>EditSongWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
