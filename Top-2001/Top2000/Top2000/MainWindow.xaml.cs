@@ -26,6 +26,7 @@ namespace Top2000
             InitializeComponent();
             cbYear.ItemsSource = DataProvider.GetAllYears();
             cbYear.SelectedIndex = 0;
+            txtPage.Text = 1 + "";
         }
 
         private void txtPage_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -65,7 +66,30 @@ namespace Top2000
 
         private void btnNext_Click(object sender, RoutedEventArgs e)
         {
+            int i;
+            if(int.TryParse(txtPage.Text, out i) && i != 80)
+            {
+                txtPage.Text = i + 1 + "";
+            }
+        }
 
+        private void btnLast_Click(object sender, RoutedEventArgs e)
+        {
+            txtPage.Text = 80 + "";
+        }
+
+        private void btnPrevious_Click(object sender, RoutedEventArgs e)
+        {
+            int i;
+            if (int.TryParse(txtPage.Text, out i) && i != 1)
+            {
+                txtPage.Text = i - 1 + "";
+            }
+        }
+
+        private void btnFirst_Click(object sender, RoutedEventArgs e)
+        {
+            txtPage.Text = 1 + "";
         }
     }
 }
