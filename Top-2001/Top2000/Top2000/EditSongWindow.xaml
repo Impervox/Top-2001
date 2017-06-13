@@ -1,0 +1,28 @@
+﻿<Window x:Class="Top2000.EditSongWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Top2000"
+        mc:Ignorable="d"
+        x:Name="windowEditSong"
+        ResizeMode="NoResize"
+        Title="EditSongWindow" Height="400" Width="800">
+    <Grid>
+        <ComboBox x:Name="cbArtist" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbArtist_SelectionChanged"/>
+        <ComboBox x:Name="cbSong" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSong_SelectionChanged"/>
+        <TextBox x:Name="txtSong" HorizontalAlignment="Left" Height="23" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="23" Margin="100,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtYear_PreviewTextInput"/>
+        <TextBox x:Name="txtLyrics" HorizontalAlignment="right" Height="340" Margin="0,30,5,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400" Drop="txtLyrics_Drop"/>
+        <Button x:Name="btnIntro" Content="browse intro" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="75" Click="btnIntro_Click"/>
+        <Button x:Name="btnEditSong" Content="aanpassen" HorizontalAlignment="Left" Margin="50,300,0,0" VerticalAlignment="Top" Width="75" Click="btnEditSong_Click"/>
+        <Button x:Name="btnRemoveSong" Content="verwijderen" HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="75" Click="btnRemoveSong_Click"/>
+        <Label Content="*Artiest:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="*Song:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="*nummer titel:" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top"/>
+        <Label Content="*uitgifte jaar:" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
+        <Label Content="Intro" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top"/>
+        <Label Content="lyrics van het nummer:" HorizontalAlignment="Left" Margin="389,4,0,0" VerticalAlignment="Top"/>
+        <Label Content="Velden met een * zijn verplicht." HorizontalAlignment="Left" Margin="7,344,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
