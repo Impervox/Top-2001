@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Top2000"
         mc:Ignorable="d"
         x:Name="windowMainMenuWindow"
-        Title="MainMenuWindow" Height="570" Width="1000" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+        Title="MainMenuWindow" Height="570" Width="1000" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name="dgRecords" HorizontalAlignment="Left" Margin="5,62,0,0" VerticalAlignment="Top" Height="443" Width="984" ColumnWidth="*" IsReadOnly="True"/>
         <Button x:Name="btnAddRecord" Content="Add Record" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.328,0.544" Click="btnAddRecord_Click"/>

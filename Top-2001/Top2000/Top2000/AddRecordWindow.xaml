@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         x:Name="windowAddRecord"
-        Title="AddRecordWindow" Height="300" Width="300">
+        Title="AddRecordWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <ComboBox x:Name="cbArtist" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="cbArtist_SelectionChanged"/>
         <ComboBox x:Name="cbSong" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="250" SelectionChanged="cbSong_SelectionChanged"/>

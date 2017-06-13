@@ -42,3 +42,13 @@ C:\Users\Gebruiker\Documents\Visual Studio 2015\Projects\group projects\eindproj
 C:\Users\Gebruiker\Documents\Visual Studio 2015\Projects\group projects\eindproject pgm ssp\Top-2001\Top2000\Top2000\obj\Debug\Top2000.csproj.GenerateResource.Cache
 C:\Users\Gebruiker\Documents\Visual Studio 2015\Projects\group projects\eindproject pgm ssp\Top-2001\Top2000\Top2000\obj\Debug\Top2000.exe
 C:\Users\Gebruiker\Documents\Visual Studio 2015\Projects\group projects\eindproject pgm ssp\Top-2001\Top2000\Top2000\obj\Debug\Top2000.pdb
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddArtistWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddRecordWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddSongWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\EditArtistWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\EditSongWindow.g.cs
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddArtistWindow.baml
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddRecordWindow.baml
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\AddSongWindow.baml
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\EditArtistWindow.baml
+D:\Files\School\Programmeren\Junk\Top-2001\Top2000\Top2000\obj\Debug\EditSongWindow.baml
