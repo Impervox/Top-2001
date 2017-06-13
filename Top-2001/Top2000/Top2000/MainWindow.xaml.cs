@@ -95,31 +95,31 @@ namespace Top2000
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
             Window w = new AddRecordWindow();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void btnAddArtist_Click(object sender, RoutedEventArgs e)
         {
             Window w = new AddArtistWindow();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             Window w = new EditArtistWindow();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void btnAddSong_Click(object sender, RoutedEventArgs e)
         {
             Window w = new AddSongWindow();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void btnEditSong_Click(object sender, RoutedEventArgs e)
         {
             Window w = new EditSongWindow();
-            w.Show();
+            w.ShowDialog();
         }
     }
 }
