@@ -13,7 +13,7 @@
         <ComboBox x:Name="cbSong" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbSong_SelectionChanged"/>
         <TextBox x:Name="txtSong" HorizontalAlignment="Left" Height="23" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="23" Margin="100,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtYear_PreviewTextInput"/>
-        <TextBox x:Name="txtLyrics" HorizontalAlignment="right" Height="340" Margin="0,30,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400" Drop="txtLyrics_Drop" PreviewDrop="txtLyrics_PreviewDrop"/>
+        <TextBox x:Name="txtLyrics" HorizontalAlignment="right" Height="340" Margin="0,30,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400" AllowDrop="True" Drop="txtLyrics_Drop" PreviewDrop="txtLyrics_PreviewDrop"/>
         <Button x:Name="btnIntro" Content="browse intro" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="75" Click="btnIntro_Click"/>
         <Button x:Name="btnEditSong" Content="aanpassen" HorizontalAlignment="Left" Margin="50,300,0,0" VerticalAlignment="Top" Width="75" Click="btnEditSong_Click"/>
         <Button x:Name="btnRemoveSong" Content="verwijderen" HorizontalAlignment="Left" Margin="250,300,0,0" VerticalAlignment="Top" Width="75" Click="btnRemoveSong_Click"/>
