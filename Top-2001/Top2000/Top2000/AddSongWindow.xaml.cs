@@ -37,7 +37,7 @@ namespace Top2000
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
         {
-            //Men moet een .txt bestant kunnen droppen in dit veld dat de content van dat bestand over neemt.
+            //Men moet een .txt bestand kunnen droppen in dit veld dat de content van dat bestand over neemt.
         }
 
         private void btnIntro_Click(object sender, RoutedEventArgs e)
