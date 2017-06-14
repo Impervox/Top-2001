@@ -21,5 +21,6 @@
         <Label Content="foto's:" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top"/>
         <Label Content="biografie van de artiest:" HorizontalAlignment="Left" Margin="389,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Velden met een * zijn verplicht." HorizontalAlignment="Left" Margin="7,344,0,0" VerticalAlignment="Top"/>
+        <Label Content="foto's:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.55,0.142"/>
     </Grid>
 </Window>
