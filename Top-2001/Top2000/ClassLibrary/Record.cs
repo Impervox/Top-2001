@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
-    class Record
+    public class Record
     {
         private int position;
         private string title;
