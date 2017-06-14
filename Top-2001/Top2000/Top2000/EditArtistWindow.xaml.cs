@@ -69,7 +69,7 @@ namespace Top2000
             //verwijder artiest van tabel artiest als er geen nummers meer aan deze artiest gekoppelt zijn.
         }
 
-        private void txtBiography_PreviewDrop(object sender, DragEventArgs e)
+        private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
         }
