@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Top2000
 {
@@ -47,7 +48,21 @@ namespace Top2000
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
         {
-            //pas lyrics aan.
+            string path;
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, true))
+            {
+                string[] droppedFilePaths = e.Data.GetData(DataFormats.FileDrop, true) as string[];
+                if (droppedFilePaths.Length == 1)
+                {
+                    path = @"" + droppedFilePaths[0].ToString();
+                    if (System.IO.Path.GetExtension(path) == ".txt")
+                        txtLyrics.Text = File.ReadAllText(path);
+                    else
+                        MessageBox.Show("U kunt alleen een .txt bestand in dit veld droppen.", "Error");
+                }
+                else
+                    MessageBox.Show("U kunt maximaal 1 bestand in dit veld droppen.", "Error");
+            }
         }
 
         private void btnIntro_Click(object sender, RoutedEventArgs e)
@@ -63,6 +78,11 @@ namespace Top2000
         private void btnRemoveSong_Click(object sender, RoutedEventArgs e)
         {
             //verwijder nummer als die niet in de top2000 voorkomt.
+        }
+
+        private void txtLyrics_PreviewDrop(object sender, DragEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

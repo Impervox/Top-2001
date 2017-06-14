@@ -64,5 +64,10 @@ namespace ClassLibrary
                 conn.Close();
             }
         }
+
+        public static void CreateArtist()
+        {
+
+        }
     }
 }
