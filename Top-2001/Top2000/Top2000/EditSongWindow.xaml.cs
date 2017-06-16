@@ -80,7 +80,7 @@ namespace Top2000
             //verwijder nummer als die niet in de top2000 voorkomt.
         }
 
-        private void txtLyrics_PreviewDrop(object sender, DragEventArgs e)
+        private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
         }
