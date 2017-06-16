@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +10,14 @@ namespace ClassLibrary
 {
     public class Artist
     {
+        private SqlConnection conn;
         private string name;
         private string biography;
         private string url;
         private byte[] picture;
+        
 
-        public Artist(string name, string biography, string url, byte[] picture)
+        public Artist(string name, string biography = null, string url = null, byte[] picture = null)
         {
             this.name = name;
             this.biography = biography;
@@ -72,5 +76,6 @@ namespace ClassLibrary
                 picture = value;
             }
         }
+
     }
 }
