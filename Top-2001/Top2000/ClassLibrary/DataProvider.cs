@@ -111,9 +111,25 @@ namespace ClassLibrary
             }
         }
 
-        public static void CreateArtist()
+        public static void AddArtist(string artistName, string artistBiography = null, string artistUrl = null, byte[] artistPicture = null)
         {
-
+            //do send name to artist table as new row artist.
+            List<int> list = new List<int>();
+            SqlCommand cmd = new SqlCommand("spAddArtist", conn);
+            cmd.Parameters.AddWithValue("@Artist", artistName);
+            cmd.Parameters.AddWithValue("@Biografie", artistBiography);
+            cmd.Parameters.AddWithValue("@Url", artistUrl);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
         }
     }
 }
