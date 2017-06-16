@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClassLibrary;
 
 namespace Top2000
 {
@@ -42,8 +43,15 @@ namespace Top2000
 
         private void btnAddArtist_Click(object sender, RoutedEventArgs e)
         {
-            //voeg de artiest toe aan tbl artiesten. als naam niet al in de tabel staat.
-            DataProvider.AddArtist(txtArtist.Text, txtBiography.Text, txtUrl.Text, new byte[0]);
+            try
+            {
+                DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
+                MessageBox.Show("Artiest toegevoegd.");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
