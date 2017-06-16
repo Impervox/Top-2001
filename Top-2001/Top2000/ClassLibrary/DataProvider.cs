@@ -113,15 +113,13 @@ namespace ClassLibrary
 
         public static void CreateArtist(string artist, string biography, string url)
         {
-            foreach(Artist artist in GetAllArtists())
+            foreach (Artist art in GetAllArtists())
             {
-                if (artist.Name == artistName)
+                if (art.Name == artist)
                 {
-                    
+                    throw new Exception();
                 }
             }
-            //do send name to artist table as new row artist.
-            List<int> list = new List<int>();
             SqlCommand cmd = new SqlCommand("spAddArtist", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Artist", artist);
