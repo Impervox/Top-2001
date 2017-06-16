@@ -113,6 +113,13 @@ namespace ClassLibrary
 
         public static void AddArtist(string artistName, string artistBiography = null, string artistUrl = null, byte[] artistPicture = null)
         {
+            foreach(Artist artist in GetAllArtists())
+            {
+                if (artist.Name == artistName)
+                {
+                    
+                }
+            }
             //do send name to artist table as new row artist.
             List<int> list = new List<int>();
             SqlCommand cmd = new SqlCommand("spAddArtist", conn);
