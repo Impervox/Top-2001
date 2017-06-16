@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using ClassLibrary;
 
 namespace Top2000
 {
@@ -23,6 +24,7 @@ namespace Top2000
         public AddSongWindow()
         {
             InitializeComponent();
+            FillComboBox();
         }
 
         private void txtYear_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -34,6 +36,12 @@ namespace Top2000
                 e.Handled = true;
 
             base.OnPreviewTextInput(e);
+        }
+
+        private void FillComboBox()
+        {
+            cbArtist.ItemsSource = (from a in DataProvider.allArtists
+                                    select a.Name).ToList();
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -62,7 +70,7 @@ namespace Top2000
 
         private void btnAddSong_Click(object sender, RoutedEventArgs e)
         {
-            //Met deze data moet er een nieuw song aan tblSongs worden toegevoegd. jaar, titel en artiest.
+            DataProvider.CreateSong(cbArtist.SelectedValue.ToString() , txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
         }
 
         private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)
