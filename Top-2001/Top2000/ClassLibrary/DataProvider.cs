@@ -16,7 +16,8 @@ namespace ClassLibrary
         static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
-        static List<int> allYears = GetAllYears();
+        public static List<int> allYears = GetAllYears();
+        public static List<Artist> allArtists = GetAllArtists();
 
         public static List<int> GetAllYears()
         {
@@ -40,6 +41,32 @@ namespace ClassLibrary
             }
         }
 
+        public static List<Artist> GetAllArtists()
+        {
+            List<Artist> list = new List<Artist>();
+            SqlCommand cmd = new SqlCommand("spGetAllArtists", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2), (byte[])reader.GetValue(3));
+                    list.Add(artist);
+                }
+                return list;
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static DataView loadData(int year, int first, int last)
         {
             SqlCommand cmd = new SqlCommand("spSongsBYPositiON", conn);
@@ -58,6 +85,25 @@ namespace ClassLibrary
             catch
             {
                 throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void CreateSong(string artist, string title, int year, string lyrics)
+        {
+            SqlCommand cmd = new SqlCommand("spAddSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ArtistName", artist);
+            cmd.Parameters.AddWithValue("@SongTitle", title);
+            cmd.Parameters.AddWithValue("@Year", year);
+            cmd.Parameters.AddWithValue("@Lyrics", lyrics);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
             }
             finally
             {

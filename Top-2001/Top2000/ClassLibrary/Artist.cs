@@ -11,9 +11,9 @@ namespace ClassLibrary
         private string name;
         private string biography;
         private string url;
-        private string picture;
+        private byte[] picture;
 
-        public Artist(string name, string biography = null, string url = null, string picture = null)
+        public Artist(string name, string biography, string url, byte[] picture)
         {
             this.name = name;
             this.biography = biography;
@@ -60,7 +60,7 @@ namespace ClassLibrary
             }
         }
 
-        public string Picture
+        public byte[] Picture
         {
             get
             {
