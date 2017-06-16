@@ -14,7 +14,7 @@ namespace Top2000
         public MainWindow()
         {
             InitializeComponent();
-            cbYear.ItemsSource = DataProvider.GetAllYears();
+            cbYear.ItemsSource = DataProvider.allYears;
             cbYear.SelectedIndex = 0;
             txtPage.Text = 1 + "";
         }
