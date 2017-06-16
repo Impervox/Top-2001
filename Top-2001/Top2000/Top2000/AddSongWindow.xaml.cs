@@ -24,6 +24,8 @@ namespace Top2000
         public AddSongWindow()
         {
             InitializeComponent();
+            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.SelectedIndex = 0;
             FillComboBox();
         }
 
@@ -41,7 +43,8 @@ namespace Top2000
         private void FillComboBox()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
-                                    select a.Name).ToList();
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    select a.Name).OrderBy(x => x).ToList();
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -76,6 +79,11 @@ namespace Top2000
         private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FillComboBox();
         }
     }
 }

@@ -111,9 +111,22 @@ namespace ClassLibrary
             }
         }
 
-        public static void CreateArtist()
+        public static void CreateArtist(string artist, string biography, string url)
         {
-
+            SqlCommand cmd = new SqlCommand("spAddArtist", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", artist);
+            cmd.Parameters.AddWithValue("@Biografie", biography);
+            cmd.Parameters.AddWithValue("@Url", url);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
