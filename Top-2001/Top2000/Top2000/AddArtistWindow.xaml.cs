@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,8 @@ namespace Top2000
         private void btnAddArtist_Click(object sender, RoutedEventArgs e)
         {
             //voeg de artiest toe aan tbl artiesten. als naam niet al in de tabel staat.
+            Artist a = new Artist(txtArtist.Text, txtBiography.Text, txtUrl.Text, txtBiography.Text);
+            a.AddArtist(txtArtist.Text, txtBiography.Text, txtUrl.Text, txtBiography.Text);
         }
     }
 }

@@ -11,11 +11,10 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        //static SqlConnection conn = new SqlConnection(@"Server=(localdb)\MSSQLLocaldb;Database=TOP2000;Trusted_Connection=True;");
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        public static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        //public static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
-        static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
+        public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         static List<int> allYears = GetAllYears();
 
         public static List<int> GetAllYears()
@@ -63,11 +62,6 @@ namespace ClassLibrary
             {
                 conn.Close();
             }
-        }
-
-        public static void CreateArtist()
-        {
-
         }
     }
 }
