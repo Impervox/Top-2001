@@ -24,6 +24,9 @@ namespace Top2000
         public EditArtistWindow()
         {
             InitializeComponent();
+            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.SelectedIndex = 0;
+            FillComboBox();
         }
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -57,7 +60,7 @@ namespace Top2000
 
         private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            //pas de foto aan.e
+            //pas de foto aan.
         }
 
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
@@ -103,6 +106,18 @@ namespace Top2000
         private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void FillComboBox()
+        {
+            cbArtist.ItemsSource = (from a in DataProvider.allArtists
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    select a.Name).OrderBy(x => x).ToList();
+        }
+
+        private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
