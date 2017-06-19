@@ -84,5 +84,10 @@ namespace Top2000
                                     where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
         }
+
+        private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
