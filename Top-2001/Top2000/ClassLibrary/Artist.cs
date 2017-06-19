@@ -13,15 +13,15 @@ namespace ClassLibrary
         private string name;
         private string biography;
         private string url;
-        private List<Song> songs;
+        private int songCount;
         
 
-        public Artist(string name, string biography = null, string url = null, List<Song> songs = null)
+        public Artist(string name, int songCount, string biography = null, string url = null)
         {
             this.name = name;
             this.biography = biography;
             this.url = url;
-            this.songs = songs;
+            this.songCount = songCount;
         }
 
         public string Name
@@ -63,5 +63,17 @@ namespace ClassLibrary
             }
         }
 
+        public int SongCount
+        {
+            get
+            {
+                return songCount;
+            }
+
+            set
+            {
+                songCount = value;
+            }
+        }
     }
 }
