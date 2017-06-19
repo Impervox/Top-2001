@@ -58,12 +58,15 @@ namespace ClassLibrary
                 {
                     list.Add(reader.GetInt32(0));
                 }
-                conn.Close();
                 return list;
             }
             catch
             {
                 throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
