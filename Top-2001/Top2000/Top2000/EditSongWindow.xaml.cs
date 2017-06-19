@@ -79,12 +79,38 @@ namespace Top2000
 
         private void btnEditSong_Click(object sender, RoutedEventArgs e)
         {
-            //record aanpassen in songs alleen als die niet al in top2000 staat.
+            try
+            {
+                if (txtSong.Text != "" && txtYear.Text != "")
+                {
+                    //TODO: Edit song procedure
+                    MessageBox.Show("Nummer aangepast.");
+                }
+                else
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+            }
+            catch
+            {
+                MessageBox.Show(DataProvider.errorException);
+            }
         }
 
         private void btnRemoveSong_Click(object sender, RoutedEventArgs e)
         {
-            //verwijder nummer als die niet in de top2000 voorkomt.
+            try
+            {
+                if (txtSong.Text != "" && txtYear.Text != "")
+                {
+                    //TODO: Remove song procedure
+                    MessageBox.Show("Nummer verwijderd.");
+                }
+                else
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+            }
+            catch
+            {
+                MessageBox.Show(DataProvider.errorException);
+            }
         }
 
         private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)

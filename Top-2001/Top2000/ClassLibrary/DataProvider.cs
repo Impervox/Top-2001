@@ -14,9 +14,36 @@ namespace ClassLibrary
         static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
         //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
-        static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
+        public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
         public static List<Artist> allArtists = GetAllArtists();
+        public static List<Song> allSongs = GetAllSongs();
+
+        private static List<Song> GetAllSongs()
+        {
+            List<Song> list = new List<Song>();
+            SqlCommand cmd = new SqlCommand("spGetAllSongs", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
+                    list.Add(song);
+                }
+                return list;
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public static List<int> GetAllYears()
         {
@@ -31,12 +58,15 @@ namespace ClassLibrary
                 {
                     list.Add(reader.GetInt32(0));
                 }
-                conn.Close();
                 return list;
             }
             catch
             {
                 throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
@@ -51,7 +81,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2), (byte[])reader.GetValue(3));
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2));
                     list.Add(artist);
                 }
                 return list;

@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ClassLibrary;
 
 namespace Top2000
 {
@@ -46,11 +45,11 @@ namespace Top2000
                     MessageBox.Show("Artiest toegevoegd.");
                 }
                 else
-                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(DataProvider.errorException);
             }
         }
     }
