@@ -113,6 +113,13 @@ namespace ClassLibrary
 
         public static void CreateArtist(string artist, string biography, string url)
         {
+            foreach (Artist art in GetAllArtists())
+            {
+                if (art.Name == artist)
+                {
+                    throw new Exception();
+                }
+            }
             SqlCommand cmd = new SqlCommand("spAddArtist", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Artist", artist);
