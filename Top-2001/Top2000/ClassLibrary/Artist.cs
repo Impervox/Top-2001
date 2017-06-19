@@ -13,15 +13,15 @@ namespace ClassLibrary
         private string name;
         private string biography;
         private string url;
-        private byte[] picture;
+        private List<Song> songs;
         
 
-        public Artist(string name, string biography = null, string url = null, byte[] picture = null)
+        public Artist(string name, string biography = null, string url = null, List<Song> songs = null)
         {
             this.name = name;
             this.biography = biography;
             this.url = url;
-            this.picture = picture;
+            this.songs = songs;
         }
 
         public string Name
@@ -60,19 +60,6 @@ namespace ClassLibrary
             set
             {
                 url = value;
-            }
-        }
-
-        public byte[] Picture
-        {
-            get
-            {
-                return picture;
-            }
-
-            set
-            {
-                picture = value;
             }
         }
 

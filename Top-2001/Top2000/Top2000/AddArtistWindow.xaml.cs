@@ -45,11 +45,11 @@ namespace Top2000
                     MessageBox.Show("Artiest toegevoegd.");
                 }
                 else
-                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(DataProvider.errorException);
             }
         }
     }

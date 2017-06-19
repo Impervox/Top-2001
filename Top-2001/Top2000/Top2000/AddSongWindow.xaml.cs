@@ -45,6 +45,7 @@ namespace Top2000
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
                                     where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
+            cbArtist.SelectedIndex = 0;
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -68,7 +69,22 @@ namespace Top2000
 
         private void btnAddSong_Click(object sender, RoutedEventArgs e)
         {
-            DataProvider.CreateSong(cbArtist.SelectedValue.ToString() , txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
+            try
+            {
+                if(txtSong.Text != "" && txtYear.Text != "")
+                {
+                    DataProvider.CreateSong(cbArtist.SelectedValue.ToString(), txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
+                    MessageBox.Show("Nummer toegevoegd.");
+                }
+                else
+                {
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show(DataProvider.errorException);
+            }
         }
 
         private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)
