@@ -15,7 +15,7 @@ namespace ClassLibrary
         //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
         static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
-        static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
+        public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
         public static List<Artist> allArtists = GetAllArtists();
 
@@ -52,7 +52,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2), (byte[])reader.GetValue(3));
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2));
                     list.Add(artist);
                 }
                 return list;

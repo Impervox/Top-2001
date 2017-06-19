@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using ClassLibrary;
 
 namespace Top2000
 {
@@ -56,17 +57,47 @@ namespace Top2000
 
         private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            //pas de foto aan.
+            //pas de foto aan.e
         }
 
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
-            //pas artiest aan in tabel artiest.
+            try
+            {
+                if (txtArtist.Text != "")
+                {
+                    //TODO: Edit artist procedure
+                    MessageBox.Show("Artiest aangepast.");
+                }
+                else
+                {
+                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show(DataProvider.errorException);
+            }
         }
 
         private void btnRemoveArtist_Click(object sender, RoutedEventArgs e)
         {
-            //verwijder artiest van tabel artiest als er geen nummers meer aan deze artiest gekoppelt zijn.
+            try
+            {
+                if (txtArtist.Text != "")
+                {
+                    //TODO: Edit artist procedure
+                    MessageBox.Show("Artiest verwijderd.");
+                }
+                else
+                {
+                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show(DataProvider.errorException);
+            }
         }
 
         private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
