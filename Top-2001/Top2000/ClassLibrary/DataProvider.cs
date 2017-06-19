@@ -17,6 +17,33 @@ namespace ClassLibrary
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
         public static List<Artist> allArtists = GetAllArtists();
+        public static List<Song> allSongs = GetAllSongs();
+
+        private static List<Song> GetAllSongs()
+        {
+            List<Song> list = new List<Song>();
+            SqlCommand cmd = new SqlCommand("spSongInList", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
+                    list.Add(song);
+                }
+                return list;
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
         public static List<int> GetAllYears()
         {
@@ -31,12 +58,15 @@ namespace ClassLibrary
                 {
                     list.Add(reader.GetInt32(0));
                 }
-                conn.Close();
                 return list;
             }
             catch
             {
                 throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
