@@ -66,11 +66,6 @@ namespace Top2000
             }
         }
 
-        private void btnIntro_Click(object sender, RoutedEventArgs e)
-        {
-            //Er moet een geluids bestand geselecteerd en opgeslagen kunnen worden.
-        }
-
         private void btnAddSong_Click(object sender, RoutedEventArgs e)
         {
             DataProvider.CreateSong(cbArtist.SelectedValue.ToString() , txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);

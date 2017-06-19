@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using ClassLibrary;
 
 namespace Top2000
 {
@@ -23,6 +24,17 @@ namespace Top2000
         public EditSongWindow()
         {
             InitializeComponent();
+            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
+            cbFirstLetter.SelectedIndex = 0;
+            FillData();
+        }
+
+        private void FillData()
+        {
+            cbArtist.ItemsSource = (from a in DataProvider.allArtists
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    select a.Name).OrderBy(a => a).ToList();
+            cbArtist.SelectedIndex = 0;
         }
 
         private void txtYear_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -63,11 +75,6 @@ namespace Top2000
                 else
                     MessageBox.Show("U kunt maximaal 1 bestand in dit veld droppen.", "Error");
             }
-        }
-
-        private void btnIntro_Click(object sender, RoutedEventArgs e)
-        {
-            //intro muziek bestand selecteren.
         }
 
         private void btnEditSong_Click(object sender, RoutedEventArgs e)
