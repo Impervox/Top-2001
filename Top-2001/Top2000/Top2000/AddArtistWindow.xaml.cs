@@ -40,8 +40,13 @@ namespace Top2000
         {
             try
             {
-                DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
-                MessageBox.Show("Artiest toegevoegd.");
+                if (txtArtist.Text != "")
+                {
+                    DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
+                    MessageBox.Show("Artiest toegevoegd.");
+                }
+                else
+                    MessageBox.Show("Artiest naam is een verplicht veld.");
             }
             catch(Exception ex)
             {
