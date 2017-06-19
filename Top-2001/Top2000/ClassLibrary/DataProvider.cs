@@ -11,9 +11,9 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        static SqlConnection conn = new SqlConnection(@"Server=(localdb)\MSSQLLocaldb;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=(localdb)\MSSQLLocaldb;Database=TOP2000;Trusted_Connection=True;");
         //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
@@ -122,6 +122,10 @@ namespace ClassLibrary
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
             }
             finally
             {

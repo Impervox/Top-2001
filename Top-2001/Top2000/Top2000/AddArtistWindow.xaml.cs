@@ -36,11 +36,6 @@ namespace Top2000
             //url moet worden gecheckt op geldige url.
         }
 
-        private void btnImage_Click(object sender, RoutedEventArgs e)
-        {
-            //foto moet kunnen worden opgeslagen en geupload naar database.
-        }
-
         private void btnAddArtist_Click(object sender, RoutedEventArgs e)
         {
             try

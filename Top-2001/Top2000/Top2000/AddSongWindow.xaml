@@ -13,12 +13,10 @@
         <TextBox x:Name="txtSong" HorizontalAlignment="Left" Height="23" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtYear" HorizontalAlignment="Left" Height="23" Margin="100,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtYear_PreviewTextInput"/>
         <TextBox x:Name="txtLyrics" HorizontalAlignment="right" Height="340" Margin="0,30,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400" AllowDrop="True" Drop="txtLyrics_Drop" PreviewDragOver="txtLyrics_PreviewDragOver"/>
-        <Button x:Name="btnIntro" Content="browse intro" HorizontalAlignment="Left" Margin="100,250,0,0" VerticalAlignment="Top" Width="75" Click="btnIntro_Click"/>
         <Button x:Name="btnAddSong" Content="toevoegen" HorizontalAlignment="Left" Margin="100,300,0,0" VerticalAlignment="Top" Width="75" Click="btnAddSong_Click"/>
         <Label Content="*Artiest:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
         <Label Content="*nummer titel:" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top"/>
         <Label Content="*uitgifte jaar:" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top"/>
-        <Label Content="Intro" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top"/>
         <Label Content="lyrics van het nummer:" HorizontalAlignment="Left" Margin="389,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Velden met een * zijn verplicht." HorizontalAlignment="Left" Margin="7,344,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbFirstLetter" HorizontalAlignment="Left" Margin="100,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbFirstLetter_SelectionChanged"/>
