@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using ClassLibrary;
 
 namespace Top2000
 {
@@ -23,6 +24,9 @@ namespace Top2000
         public EditArtistWindow()
         {
             InitializeComponent();
+            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.SelectedIndex = 0;
+            FillComboBox();
         }
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -72,6 +76,13 @@ namespace Top2000
         private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void FillComboBox()
+        {
+            cbArtist.ItemsSource = (from a in DataProvider.allArtists
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    select a.Name).OrderBy(x => x).ToList();
         }
     }
 }
