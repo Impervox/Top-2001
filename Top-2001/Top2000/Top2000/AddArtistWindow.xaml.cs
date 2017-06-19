@@ -41,7 +41,7 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
+                    DataProvider.CreateArtist(txtArtist.Text.ToString(), DataProvider.lastId + 1, txtBiography.Text.ToString(), txtUrl.Text.ToString());
                     MessageBox.Show("Artiest toegevoegd.");
                 }
                 else
