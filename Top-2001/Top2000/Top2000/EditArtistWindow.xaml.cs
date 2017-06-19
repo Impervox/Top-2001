@@ -117,7 +117,7 @@ namespace Top2000
 
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            FillComboBox();
         }
     }
 }
