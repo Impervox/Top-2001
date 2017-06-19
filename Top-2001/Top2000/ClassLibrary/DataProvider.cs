@@ -22,7 +22,7 @@ namespace ClassLibrary
         private static List<Song> GetAllSongs()
         {
             List<Song> list = new List<Song>();
-            SqlCommand cmd = new SqlCommand("spSongInList", conn);
+            SqlCommand cmd = new SqlCommand("spSongLijst", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {

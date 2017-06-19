@@ -13,15 +13,15 @@ namespace ClassLibrary
         private string name;
         private string biography;
         private string url;
-        private List<Song> songs;
+        //private List<Song> songs;
         
 
-        public Artist(string name, string biography = null, string url = null, List<Song> songs = null)
+        public Artist(string name, string biography = null, string url = null)//, List<Song> songs = null)
         {
             this.name = name;
             this.biography = biography;
             this.url = url;
-            this.songs = songs;
+            //this.songs = songs;
         }
 
         public string Name
