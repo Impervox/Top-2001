@@ -91,5 +91,10 @@ namespace Top2000
         {
             e.Handled = true;
         }
+
+        private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FillData();
+        }
     }
 }

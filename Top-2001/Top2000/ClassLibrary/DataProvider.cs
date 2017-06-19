@@ -125,6 +125,7 @@ namespace ClassLibrary
             cmd.Parameters.AddWithValue("@Artist", artist);
             cmd.Parameters.AddWithValue("@Biografie", biography);
             cmd.Parameters.AddWithValue("@Url", url);
+            allArtists.Add(new Artist(artist, biography, url));
             try
             {
                 conn.Open();

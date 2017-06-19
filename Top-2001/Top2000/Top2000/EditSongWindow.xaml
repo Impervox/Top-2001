@@ -23,6 +23,6 @@
         <Label Content="lyrics van het nummer:" HorizontalAlignment="Left" Margin="389,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Velden met een * zijn verplicht." HorizontalAlignment="Left" Margin="7,344,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Eerste Letter:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbFirstLetter" HorizontalAlignment="Left" Margin="100,20,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbFirstLetter" HorizontalAlignment="Left" Margin="100,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbFirstLetter_SelectionChanged"/>
     </Grid>
 </Window>
