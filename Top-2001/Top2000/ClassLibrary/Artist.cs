@@ -10,7 +10,6 @@ namespace ClassLibrary
 {
     public class Artist
     {
-        private SqlConnection conn;
         private string name;
         private string biography;
         private string url;

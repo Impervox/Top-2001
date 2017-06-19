@@ -11,8 +11,7 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        static SqlConnection conn = new SqlConnection(@"Server=(localdb)\MSSQLLocaldb;Database=TOP2000;Trusted_Connection=True;");
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
         //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
@@ -125,6 +124,7 @@ namespace ClassLibrary
             cmd.Parameters.AddWithValue("@Artist", artist);
             cmd.Parameters.AddWithValue("@Biografie", biography);
             cmd.Parameters.AddWithValue("@Url", url);
+            allArtists.Add(new Artist(artist, biography, url));
             try
             {
                 conn.Open();

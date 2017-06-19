@@ -9,7 +9,6 @@
         ResizeMode="NoResize"
         Title="EditArtistWindow" Height="400" Width="800" SizeToContent="Height" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ComboBox x:Name="cbArtist" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbArtist_SelectionChanged"/>
         <TextBox x:Name="txtArtist" HorizontalAlignment="Left" Height="23" Margin="100,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="100,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="txtUrl_PreviewTextInput"/>
         <TextBox x:Name="txtBiography" HorizontalAlignment="right" Height="340" Margin="0,30,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" AllowDrop="True" Width="400" Drop="txtBiography_Drop" PreviewDragOver="txtBiography_PreviewDragOver"/>
@@ -21,6 +20,9 @@
         <Label Content="foto's:" HorizontalAlignment="Left" Margin="10,144,0,0" VerticalAlignment="Top"/>
         <Label Content="biografie van de artiest:" HorizontalAlignment="Left" Margin="389,4,0,0" VerticalAlignment="Top"/>
         <Label Content="Velden met een * zijn verplicht." HorizontalAlignment="Left" Margin="7,344,0,0" VerticalAlignment="Top"/>
-        <Label Content="foto's:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.55,0.142"/>
+        <ComboBox x:Name="cbArtist" HorizontalAlignment="Left" Margin="100,50,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="*Artiest:" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbFirstLetter" HorizontalAlignment="Left" Margin="100,23,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbFirstLetter_SelectionChanged"/>
+        <Label x:Name="label" Content="Eerste letter:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
