@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using ClassLibrary;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Top2000
 {
@@ -21,6 +23,8 @@ namespace Top2000
     /// </summary>
     public partial class EditSongWindow : Window
     {
+        Artist thisArtist;
+        Song ThisSong;
         public EditSongWindow()
         {
             InitializeComponent();
@@ -50,12 +54,14 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: fill cbSongs with songs of this artist.
+            //TODO: fill cbSongs with songs of this artist. (Bas)
+            //get songs from artist this artist.
+            cbSong.ItemsSource = DataProvider.SongsOfArtist(cbArtist.Text);
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: get the song that will be edited.
+            //TODO: get the song that will be edited. (Bas)
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)

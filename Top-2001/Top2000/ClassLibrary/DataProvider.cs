@@ -57,15 +57,14 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
-                    //list.Add(artist);
+                    Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
+                    list.Add(artist);
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
@@ -83,15 +82,14 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetInt32(2), (byte[])reader.GetValue(3), reader.GetString(4));
-                    //list.Add(song);
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetInt32(2), (byte[])reader.GetValue(3), reader.GetString(4));
+                    list.Add(song);
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
@@ -102,7 +100,7 @@ namespace ClassLibrary
 
         public static DataView loadData(int year, int first, int last)
         {
-            SqlCommand cmd = new SqlCommand("spSongsByPosition", conn); //spSongsBYPositiON
+            SqlCommand cmd = new SqlCommand("spSongsByPosition", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@lowestSong", first);
             cmd.Parameters.AddWithValue("@higestSong", last);
@@ -167,6 +165,33 @@ namespace ClassLibrary
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static List<string> SongsOfArtist(string artist)
+        {
+            List<string> list = new List<string>();
+
+            SqlCommand cmd = new SqlCommand("spSongsByArtist", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@artiest", artist);
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(reader.GetString(1));
+                }
+                return list;
             }
             catch
             {
