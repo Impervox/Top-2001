@@ -20,7 +20,6 @@ namespace ClassLibrary
         public static List<Song> allSongs = GetAllSongs();
         public static int lastId = (from s in allArtists
                                     select s.ArtistId).OrderByDescending(x => x).First();
-        private static string lol = "";
 
         private static List<Song> GetAllSongs()
         {
