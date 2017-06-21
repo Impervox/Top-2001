@@ -11,8 +11,8 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
@@ -57,15 +57,14 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
-                    //list.Add(artist);
+                    Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
+                    list.Add(artist);
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
@@ -83,15 +82,14 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetInt32(2), (byte[])reader.GetValue(3), reader.GetString(4));
-                    //list.Add(song);
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetInt32(2), (byte[])reader.GetValue(3), reader.GetString(4));
+                    list.Add(song);
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
@@ -102,7 +100,7 @@ namespace ClassLibrary
 
         public static DataView loadData(int year, int first, int last)
         {
-            SqlCommand cmd = new SqlCommand("spSongsByPosition", conn); //spSongsBYPositiON
+            SqlCommand cmd = new SqlCommand("spSongsByPosition", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@lowestSong", first);
             cmd.Parameters.AddWithValue("@higestSong", last);
