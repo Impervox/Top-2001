@@ -23,6 +23,7 @@ namespace Top2000
         public AddRecordWindow()
         {
             InitializeComponent();
+            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
         }
 
         private void txtPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -35,8 +36,13 @@ namespace Top2000
 
             base.OnPreviewTextInput(e);
         }
-
-        //TODO: add cbFirstLetter.
+        private void FillComboBox()
+        {
+            cbArtist.ItemsSource = (from a in DataProvider.allArtists
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    select a.Name).OrderBy(x => x).ToList();
+            cbArtist.SelectedIndex = 0;
+        }
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -51,6 +57,11 @@ namespace Top2000
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
             //TODO: add record to current -1 top2000 year(? or how do we want to do this?)
+        }
+
+        private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FillComboBox();
         }
     }
 }
