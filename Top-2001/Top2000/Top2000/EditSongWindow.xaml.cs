@@ -50,12 +50,12 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //songs aanpassen naar songs van deze artiest.
+            //TODO: fill cbSongs with songs of this artist.
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //artiest invullen van dit nummer.
+            //TODO: get the song that will be edited.
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -83,7 +83,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-                    //TODO: Edit song procedure
+                    //TODO: Edit song procedure, if this song is not in a previous year.
                     MessageBox.Show("Nummer aangepast.");
                 }
                 else
@@ -101,7 +101,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-                    //TODO: Remove song procedure
+                    //TODO: Remove song procedure, if the song is not in a previous year.
                     MessageBox.Show("Nummer verwijderd.");
                 }
                 else

@@ -36,19 +36,21 @@ namespace Top2000
             base.OnPreviewTextInput(e);
         }
 
+        //TODO: add cbFirstLetter.
+
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //update de songs combobox dat die alleen nummers van die artiest weergeeft.
+            //TODO: fill cbSongs with songs of this artist.
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //vul automatisch de artiest in cbArtiest in.
+            //TODO: this song should be added, only if song is not already in this year.
         }
 
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
-            //voeg record toe aan database laatste jaar.
+            //TODO: add record to current -1 top2000 year(? or how do we want to do this?)
         }
     }
 }

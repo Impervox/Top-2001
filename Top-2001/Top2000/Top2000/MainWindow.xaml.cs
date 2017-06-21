@@ -1,5 +1,6 @@
 ﻿using ClassLibrary;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,8 +14,9 @@ namespace Top2000
     {
         public MainWindow()
         {
+            List<int> years = DataProvider.allYears;
             InitializeComponent();
-            cbYear.ItemsSource = DataProvider.allYears;
+            cbYear.ItemsSource = years;
             cbYear.SelectedIndex = 0;
             txtPage.Text = 1 + "";
         }
@@ -37,6 +39,10 @@ namespace Top2000
 
         private void cbYear_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (txtPage.Text == "")
+            {
+                txtPage.Text = 1 + "";
+            }
             UpdateGrid();
         }
 
