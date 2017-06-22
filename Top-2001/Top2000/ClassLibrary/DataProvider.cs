@@ -98,8 +98,31 @@ namespace ClassLibrary
 
         public static void EditSong(Song thisSong)
         {
-
-            //pas nummer aan.
+            SqlCommand cmd = new SqlCommand("spEditSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@title", thisSong.Title);
+            cmd.Parameters.AddWithValue("@lyrics", thisSong.Lyrics);
+            cmd.Parameters.AddWithValue("@year", thisSong.Year);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                    {
+                        s.Title = thisSong.Title;
+                        s.Lyrics = thisSong.Lyrics;
+                        s.Year = thisSong.Year;
+                    }
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public static DataView loadData(int year, int first, int last)
@@ -130,6 +153,25 @@ namespace ClassLibrary
         public static void RemoveSong(Song thisSong)
         {
             //if this song is not in top2000 previous years then delete.
+            SqlCommand cmd = new SqlCommand("spRemoveSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@song", thisSong.Title);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                        allSongs.Remove(s);
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public static void CreateSong(string artist, string title, int year, string lyrics)
