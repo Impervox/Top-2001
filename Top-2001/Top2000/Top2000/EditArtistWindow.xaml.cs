@@ -31,7 +31,6 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO:changed artist selection, the artist that will be changed or removed.
             if(String.IsNullOrEmpty((string)cbArtist.SelectedValue))
             {
                 cbArtist.SelectedIndex = 0;
@@ -68,11 +67,6 @@ namespace Top2000
             //TODO: controlle op geldig email adress (optioneel).
         }
 
-        private void btnImage_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO: browse image implementation (optioneel).
-        }
-
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -80,7 +74,9 @@ namespace Top2000
                 if (txtArtist.Text != "")
                 {
                     //TODO: Edit artist procedure, artist can't have a song in a previous list.
+                    DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
                     MessageBox.Show("Artiest aangepast.");
+                    FillComboBox();
                 }
                 else
                 {

@@ -23,7 +23,7 @@ namespace Top2000
         public AddRecordWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
+            FillComboBox();
         }
 
         private void txtPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -38,6 +38,9 @@ namespace Top2000
         }
         private void FillComboBox()
         {
+            cbYear.ItemsSource = DataProvider.GetYearsAndSongCount();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
+            cbFirstLetter.SelectedIndex = 0;
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
                                     where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
@@ -46,7 +49,8 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: fill cbSongs with songs of this artist.
+            cbSong.ItemsSource = DataProvider.SongsOfArtist(cbArtist.SelectedValue.ToString());
+            cbSong.SelectedIndex = 0;
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,7 +60,7 @@ namespace Top2000
 
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: add record to current -1 top2000 year(? or how do we want to do this?)
+            DataProvider.AddRecord(cbArtist.SelectedValue.ToString(), cbSong.SelectedValue.ToString(), int.Parse(txtPosition.Text), int.Parse(cbYear.SelectedValue.ToString()));
         }
 
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
