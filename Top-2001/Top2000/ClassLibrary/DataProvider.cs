@@ -18,8 +18,6 @@ namespace ClassLibrary
         public static List<int> allYears = GetAllYears();
         public static List<Artist> allArtists = GetAllArtists();
         public static List<Song> allSongs = GetAllSongs();
-        public static int lastId = (from s in allArtists
-                                    select s.ArtistId).OrderByDescending(x => x).First();
 
         public static List<int> GetAllYears()
         {
@@ -57,7 +55,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2));
                     list.Add(artist);
                 }
                 return list;
@@ -71,7 +69,8 @@ namespace ClassLibrary
                 conn.Close();
             }
         }
-        private static List<Song> GetAllSongs()
+
+        public static List<Song> GetAllSongs()
         {
             List<Song> list = new List<Song>();
             SqlCommand cmd = new SqlCommand("spSongLijst", conn);
@@ -82,8 +81,8 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
-                    //list.Add(song);
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
+                    list.Add(song);
                 }
                 return list;
             }
@@ -155,7 +154,7 @@ namespace ClassLibrary
             }
         }
 
-        public static void CreateArtist(string artist, int id, string biography, string url)
+        public static void CreateArtist(string artist, string biography, string url)
         {
             foreach (Artist art in GetAllArtists())
             {
@@ -169,7 +168,7 @@ namespace ClassLibrary
             cmd.Parameters.AddWithValue("@Artist", artist);
             cmd.Parameters.AddWithValue("@Biografie", biography);
             cmd.Parameters.AddWithValue("@Url", url);
-            allArtists.Add(new Artist(artist, id, biography, url));
+            allArtists.Add(new Artist(artist, biography, url));
             try
             {
                 conn.Open();
@@ -201,6 +200,56 @@ namespace ClassLibrary
                     list.Add(reader.GetString(1));
                 }
                 return list;
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static char[] GetFirstCharacters()
+        {
+            List<char> array = new List<char>();
+            SqlCommand cmd = new SqlCommand("spGetAllFirstCharactersFromArtists", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    array.Add(reader.GetChar(0));
+                }
+                return array.ToArray();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void RemoveArtist(string artist)
+        {
+            SqlCommand cmd = new SqlCommand("spRemoveArtist", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", artist);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach(Artist a in allArtists.OrderBy(x => x.Name).ToList())
+                {
+                    if (a.Name == artist)
+                        allArtists.Remove(a);
+                }
             }
             catch
             {
