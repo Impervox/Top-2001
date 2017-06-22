@@ -97,7 +97,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-
+                    DataProvider.EditSong(ThisSong);
                     //TODO: Edit song procedure, if this song is not in a previous year.
                     MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
                 }
@@ -116,6 +116,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
+                    DataProvider.RemoveSong(ThisSong);
                     //TODO: Remove song procedure, if the song is not in a previous year.
                     MessageBox.Show("Nummer verwijderd.");
                 }

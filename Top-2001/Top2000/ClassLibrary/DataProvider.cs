@@ -11,8 +11,8 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
@@ -82,8 +82,8 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetInt32(2), (byte[])reader.GetValue(3), reader.GetString(4));
-                    list.Add(song);
+                    //Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
+                    //list.Add(song);
                 }
                 return list;
             }
@@ -97,6 +97,10 @@ namespace ClassLibrary
             }
         }
 
+        public static void EditSong(Song thisSong)
+        {
+            //pas nummer aan.
+        }
 
         public static DataView loadData(int year, int first, int last)
         {
@@ -121,6 +125,11 @@ namespace ClassLibrary
             {
                 conn.Close();
             }
+        }
+
+        public static void RemoveSong(Song thisSong)
+        {
+            //if this song is not in top2000 previous years then delete.
         }
 
         public static void CreateSong(string artist, string title, int year, string lyrics)
@@ -193,10 +202,9 @@ namespace ClassLibrary
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
