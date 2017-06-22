@@ -24,7 +24,7 @@ namespace Top2000
         public EditArtistWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
             cbFirstLetter.SelectedIndex = 0;
             FillComboBox();
         }

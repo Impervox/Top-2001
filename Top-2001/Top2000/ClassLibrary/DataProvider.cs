@@ -203,7 +203,7 @@ namespace ClassLibrary
 
         public static char[] GetFirstCharacters()
         {
-            List<char> array = new List<char>();
+            string characters = "";
             SqlCommand cmd = new SqlCommand("spGetAllFirstCharactersFromArtists", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
@@ -212,9 +212,9 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while(reader.Read())
                 {
-                    array.Add(reader.GetChar(0));
+                    characters += reader.GetString(0);
                 }
-                return array.ToArray();
+                return characters.ToArray();
             }
             catch
             {
