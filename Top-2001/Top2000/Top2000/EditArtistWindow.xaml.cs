@@ -65,14 +65,9 @@ namespace Top2000
 
         private void txtUrl_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //TODO: controlle op geldig email adress (optioneel).
+            //TODO: controlle op geldig url (optioneel).
         }
-
-        private void btnImage_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO: browse image implementation (optioneel).
-        }
-
+        
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             try

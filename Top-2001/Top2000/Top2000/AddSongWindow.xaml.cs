@@ -24,7 +24,7 @@ namespace Top2000
         public AddSongWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
             cbFirstLetter.SelectedIndex = 0;
             FillComboBox();
         }
@@ -74,7 +74,7 @@ namespace Top2000
                 if(txtSong.Text != "" && txtYear.Text != "")
                 {
                     DataProvider.CreateSong(cbArtist.SelectedValue.ToString(), txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
-                    MessageBox.Show("Nummer toegevoegd.");
+                    MessageBox.Show("Dit nummer is toegevoegd.", "Uitgevoerd.");
                 }
                 else
                 {
