@@ -66,10 +66,14 @@ namespace Top2000
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //get the song that will be edited.
+            //fill the fields with this song's information if avaliable.
             foreach (Song song in DataProvider.allSongs)
                 if (song.Title == (string)cbSong.SelectedItem)
                     ThisSong = song;
 
+            txtSong.Text = ThisSong.Title;
+            txtYear.Text = ThisSong.Year.ToString();
+            txtLyrics.Text = ThisSong.Lyrics;
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
