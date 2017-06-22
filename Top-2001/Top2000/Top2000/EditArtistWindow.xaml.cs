@@ -24,7 +24,7 @@ namespace Top2000
         public EditArtistWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.ItemsSource = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
             cbFirstLetter.SelectedIndex = 0;
             FillComboBox();
         }
@@ -32,6 +32,16 @@ namespace Top2000
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //TODO:changed artist selection, the artist that will be changed or removed.
+            if(String.IsNullOrEmpty((string)cbArtist.SelectedValue))
+            {
+                cbArtist.SelectedIndex = 0;
+            }
+            Artist artist = (from a in DataProvider.allArtists
+                             where a.Name == cbArtist.SelectedItem.ToString()
+                             select a).First();
+            txtArtist.Text = artist.Name;
+            txtBiography.Text = artist.Biography;
+            txtUrl.Text = artist.Url;
         }
 
         private void txtBiography_Drop(object sender, DragEventArgs e)
@@ -87,14 +97,20 @@ namespace Top2000
         {
             try
             {
-                if (txtArtist.Text != "")
+                if (cbArtist.SelectedValue.ToString() != "")
                 {
-                    //TODO: Edit artist procedure, artist can't have songs
-                    MessageBox.Show("Artiest verwijderd.");
+                    if (DataProvider.SongsOfArtist(cbArtist.SelectedValue.ToString()).Count == 0)
+                    {
+                        DataProvider.RemoveArtist(cbArtist.SelectedValue.ToString());
+                        MessageBox.Show("Artiest verwijderd.");
+                        FillComboBox();
+                    }
+                    else
+                        MessageBox.Show("U kunt een artiest niet verwijderen zolang hij nummers heeft.");
                 }
                 else
                 {
-                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                    MessageBox.Show("Selecteer A.U.B. een artiest");
                 }
             }
             catch
@@ -113,6 +129,7 @@ namespace Top2000
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
                                     where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
+            cbArtist.SelectedIndex = 0;
         }
 
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
