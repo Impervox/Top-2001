@@ -54,14 +54,22 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: fill cbSongs with songs of this artist. (Bas)
+            //fill cbSongs with songs of this artist.
             //get songs from artist this artist.
-            cbSong.ItemsSource = DataProvider.SongsOfArtist(cbArtist.Text);
+            foreach (Artist artist in DataProvider.allArtists)
+                if (artist.Name == (string)cbArtist.SelectedItem)
+                    thisArtist = artist;
+            
+            cbSong.ItemsSource = DataProvider.SongsOfArtist((string)cbArtist.SelectedItem);
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO: get the song that will be edited. (Bas)
+            //get the song that will be edited.
+            foreach (Song song in DataProvider.allSongs)
+                if (song.Title == (string)cbSong.SelectedItem)
+                    ThisSong = song;
+
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -89,8 +97,9 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
+
                     //TODO: Edit song procedure, if this song is not in a previous year.
-                    MessageBox.Show("Nummer aangepast.");
+                    MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.");
