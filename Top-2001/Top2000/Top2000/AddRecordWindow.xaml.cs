@@ -23,7 +23,7 @@ namespace Top2000
         public AddRecordWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
         }
 
         private void txtPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)

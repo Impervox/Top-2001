@@ -28,7 +28,7 @@ namespace Top2000
         public EditSongWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
             cbFirstLetter.SelectedIndex = 0;
             FillData();
         }
