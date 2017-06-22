@@ -11,8 +11,8 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
@@ -297,6 +297,92 @@ namespace ClassLibrary
             catch
             {
                 throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void EditArtist(string name, string newName, string url = null, string biography = null)
+        {
+            SqlCommand cmd = new SqlCommand("spEditArtist", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", name);
+            cmd.Parameters.AddWithValue("@NewArtist", newName);
+            cmd.Parameters.AddWithValue("@Url", url);
+            cmd.Parameters.AddWithValue("@Biography", biography);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+                allArtists = GetAllArtists();
+            }
+        }
+
+        public static void AddRecord(string artist, string song, int position, int year)
+        {
+            SqlCommand cmd = new SqlCommand("spAddRecord", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", artist);
+            cmd.Parameters.AddWithValue("@Song", song);
+            cmd.Parameters.AddWithValue("@Position", position);
+            cmd.Parameters.AddWithValue("@Year", year);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+                allYears = GetAllYears();
+            }
+        }
+
+        public static List<int> GetYearsAndSongCount()
+        {
+            List<int> returnValue = new List<int>();
+            List<int> years = new List<int>();
+            List<int> count = new List<int>();
+            SqlCommand cmd = new SqlCommand("spGetYearAndAmountOfNumbers", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    years.Add(reader.GetInt32(0));
+                    count.Add(reader.GetInt32(1));
+                }
+                for (int i = years.OrderBy(x => x).ToList()[0]; i <= DateTime.Today.Year; i++)
+                {
+                    if (!years.Contains(i))
+                        returnValue.Add(i);
+                    else
+                        for (int b = 0; b <= years.Count; b++)
+                            if (count[b] != 2000)
+                                returnValue.Add(i);
+                }
+                return returnValue;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+                //throw new Exception(errorException);
             }
             finally
             {
