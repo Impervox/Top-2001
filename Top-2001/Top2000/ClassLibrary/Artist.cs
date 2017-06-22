@@ -13,15 +13,13 @@ namespace ClassLibrary
         private string name;
         private string biography;
         private string url;
-        private int artistId;
         
 
-        public Artist(string name, int artistId, string biography = null, string url = null)
+        public Artist(string name, string biography = null, string url = null)
         {
             this.name = name;
             this.biography = biography;
             this.url = url;
-            this.artistId = artistId;
         }
 
         public string Name
@@ -60,14 +58,6 @@ namespace ClassLibrary
             set
             {
                 url = value;
-            }
-        }
-
-        public int ArtistId
-        {
-            get
-            {
-                return artistId;
             }
         }
     }

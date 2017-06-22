@@ -12,7 +12,6 @@ namespace ClassLibrary
         private string lyrics;
         private int year;
         private byte[] intro;
-        private int artistId;
 
         public string Title
         {
@@ -66,13 +65,12 @@ namespace ClassLibrary
             }
         }
 
-        public Song(string title, int year, int artistId, byte[] intro = null, string lyrics = null)
+        public Song(string title, int year, byte[] intro = null, string lyrics = null)
         {
             this.title = title;
             this.lyrics = lyrics;
             this.year = year;
             this.intro = intro;
-            this.artistId = artistId;
         }
     }
 }
