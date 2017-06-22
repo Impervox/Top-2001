@@ -59,8 +59,8 @@ namespace Top2000
             foreach (Artist artist in DataProvider.allArtists)
                 if (artist.Name == (string)cbArtist.SelectedItem)
                     thisArtist = artist;
-            
-            cbSong.ItemsSource = DataProvider.SongsOfArtist((string)cbArtist.SelectedItem);
+
+            cbSong.ItemsSource = DataProvider.SongsOfArtist(thisArtist.Name);
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
