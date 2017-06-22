@@ -66,10 +66,14 @@ namespace Top2000
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //get the song that will be edited.
+            //fill the fields with this song's information if avaliable.
             foreach (Song song in DataProvider.allSongs)
                 if (song.Title == (string)cbSong.SelectedItem)
                     ThisSong = song;
 
+            txtSong.Text = ThisSong.Title;
+            txtYear.Text = ThisSong.Year.ToString();
+            txtLyrics.Text = ThisSong.Lyrics;
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -97,7 +101,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-
+                    DataProvider.EditSong(ThisSong);
                     //TODO: Edit song procedure, if this song is not in a previous year.
                     MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
                 }
@@ -116,6 +120,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
+                    DataProvider.RemoveSong(ThisSong);
                     //TODO: Remove song procedure, if the song is not in a previous year.
                     MessageBox.Show("Nummer verwijderd.");
                 }

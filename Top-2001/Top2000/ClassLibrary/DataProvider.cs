@@ -55,7 +55,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(2), reader.GetString(3));
                     list.Add(artist);
                 }
                 return list;
@@ -96,6 +96,35 @@ namespace ClassLibrary
             }
         }
 
+        public static void EditSong(Song thisSong)
+        {
+            SqlCommand cmd = new SqlCommand("spEditSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@title", thisSong.Title);
+            cmd.Parameters.AddWithValue("@lyrics", thisSong.Lyrics);
+            cmd.Parameters.AddWithValue("@year", thisSong.Year);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                    {
+                        s.Title = thisSong.Title;
+                        s.Lyrics = thisSong.Lyrics;
+                        s.Year = thisSong.Year;
+                    }
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static DataView loadData(int year, int first, int last)
         {
             SqlCommand cmd = new SqlCommand("spSongsByPosition", conn);
@@ -110,6 +139,30 @@ namespace ClassLibrary
                 DataTable table = new DataTable();
                 table.Load(reader);
                 return table.DefaultView;
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void RemoveSong(Song thisSong)
+        {
+            //if this song is not in top2000 previous years then delete.
+            SqlCommand cmd = new SqlCommand("spRemoveSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@song", thisSong.Title);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                        allSongs.Remove(s);
             }
             catch
             {
