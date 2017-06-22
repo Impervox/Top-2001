@@ -201,6 +201,31 @@ namespace ClassLibrary
             }
         }
 
+        public static char[] GetFirstCharacters()
+        {
+            List<char> array = new List<char>();
+            SqlCommand cmd = new SqlCommand("spGetAllFirstCharactersFromArtists", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    array.Add(reader.GetChar(0));
+                }
+                return array.ToArray();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static void RemoveArtist(string artist)
         {
             SqlCommand cmd = new SqlCommand("spRemoveArtist", conn);
