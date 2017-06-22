@@ -31,7 +31,7 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //pas gegevens van deze artiest aan.
+            //TODO:changed artist selection, the artist that will be changed or removed.
         }
 
         private void txtBiography_Drop(object sender, DragEventArgs e)
@@ -55,12 +55,12 @@ namespace Top2000
 
         private void txtUrl_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            //pas de url aan.
+            //TODO: controlle op geldig email adress (optioneel).
         }
 
         private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            //pas de foto aan.
+            //TODO: browse image implementation (optioneel).
         }
 
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
@@ -69,7 +69,7 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    //TODO: Edit artist procedure
+                    //TODO: Edit artist procedure, artist can't have a song in a previous list.
                     MessageBox.Show("Artiest aangepast.");
                 }
                 else
@@ -89,7 +89,7 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    //TODO: Remove artist procedure
+                    //TODO: Edit artist procedure, artist can't have songs
                     MessageBox.Show("Artiest verwijderd.");
                 }
                 else
@@ -111,7 +111,7 @@ namespace Top2000
         private void FillComboBox()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
-                                    //where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
         }
 

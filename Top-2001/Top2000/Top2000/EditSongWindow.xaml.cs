@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using ClassLibrary;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Top2000
 {
@@ -21,6 +23,8 @@ namespace Top2000
     /// </summary>
     public partial class EditSongWindow : Window
     {
+        Artist thisArtist;
+        Song ThisSong;
         public EditSongWindow()
         {
             InitializeComponent();
@@ -50,12 +54,22 @@ namespace Top2000
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //songs aanpassen naar songs van deze artiest.
+            //fill cbSongs with songs of this artist.
+            //get songs from artist this artist.
+            foreach (Artist artist in DataProvider.allArtists)
+                if (artist.Name == (string)cbArtist.SelectedItem)
+                    thisArtist = artist;
+
+            cbSong.ItemsSource = DataProvider.SongsOfArtist(thisArtist.Name);
         }
 
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //artiest invullen van dit nummer.
+            //get the song that will be edited.
+            foreach (Song song in DataProvider.allSongs)
+                if (song.Title == (string)cbSong.SelectedItem)
+                    ThisSong = song;
+
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -83,8 +97,9 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-                    //TODO: Edit song procedure
-                    MessageBox.Show("Nummer aangepast.");
+
+                    //TODO: Edit song procedure, if this song is not in a previous year.
+                    MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.");
@@ -101,7 +116,7 @@ namespace Top2000
             {
                 if (txtSong.Text != "" && txtYear.Text != "")
                 {
-                    //TODO: Remove song procedure
+                    //TODO: Remove song procedure, if the song is not in a previous year.
                     MessageBox.Show("Nummer verwijderd.");
                 }
                 else
