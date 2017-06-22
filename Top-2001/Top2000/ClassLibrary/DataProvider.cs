@@ -83,8 +83,8 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    //Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
-                    //list.Add(artist);
+                    Artist artist = new Artist(reader.GetString(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3));
+                    list.Add(artist);
                 }
                 return list;
             }
