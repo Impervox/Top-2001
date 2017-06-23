@@ -8,17 +8,18 @@
         x:Name="windowMainMenuWindow"
         Title="MainMenuWindow" Height="570" Width="1000" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="dgRecords" HorizontalAlignment="Left" Margin="5,62,0,0" VerticalAlignment="Top" Height="443" Width="984" ColumnWidth="*" IsReadOnly="True"/>
-        <Button x:Name="btnAddRecord" Content="Add Record" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.328,0.544" Click="btnAddRecord_Click"/>
-        <Button x:Name="btnAddArtist" Content="Add Artist" HorizontalAlignment="Left" Margin="228,10,0,0" VerticalAlignment="Top" Width="100" Click="btnAddArtist_Click"/>
-        <Button x:Name="btnEditArtist" Content="Edit Artist" HorizontalAlignment="Left" Margin="451,10,0,0" VerticalAlignment="Top" Width="100" Click="btnEditArtist_Click"/>
-        <Button x:Name="btnAddSong" Content="Add Song" HorizontalAlignment="Left" Margin="674,10,0,0" VerticalAlignment="Top" Width="100" Click="btnAddSong_Click"/>
+        <DataGrid x:Name="dgRecords" HorizontalAlignment="Left" Margin="5,88,0,0" VerticalAlignment="Top" Height="417" Width="984" ColumnWidth="*" IsReadOnly="True"/>
+        <Button x:Name="btnAddRecord" Content="Add Record" HorizontalAlignment="Left" Margin="126,10,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.328,0.544" Click="btnAddRecord_Click"/>
+        <Button x:Name="btnAddArtist" Content="Add Artist" HorizontalAlignment="Left" Margin="319,10,0,0" VerticalAlignment="Top" Width="100" Click="btnAddArtist_Click"/>
+        <Button x:Name="btnEditArtist" Content="Edit Artist" HorizontalAlignment="Left" Margin="512,10,0,0" VerticalAlignment="Top" Width="100" Click="btnEditArtist_Click"/>
+        <Button x:Name="btnAddSong" Content="Add Song" HorizontalAlignment="Left" Margin="705,10,0,0" VerticalAlignment="Top" Width="100" Click="btnAddSong_Click"/>
         <Button x:Name="btnEditSong" Content="Edit Song" HorizontalAlignment="Left" Margin="889,10,5,0" VerticalAlignment="Top" Width="100" Click="btnEditSong_Click"/>
-        <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="5,35,0,0" VerticalAlignment="Top" Width="984" SelectionChanged="cbYear_SelectionChanged"/>
+        <ComboBox x:Name="cbYear" HorizontalAlignment="Left" Margin="5,61,0,0" VerticalAlignment="Top" Width="984" SelectionChanged="cbYear_SelectionChanged"/>
         <Button x:Name="btnNext" Content=">" HorizontalAlignment="Left" Margin="674,510,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="btnNext_Click"/>
         <Button x:Name="btnLast" Content=">>>" HorizontalAlignment="Left" Margin="889,510,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="btnLast_Click"/>
         <Button x:Name="btnPrevious" Content="&lt;" HorizontalAlignment="Left" Margin="228,510,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="btnPrevious_Click"/>
         <Button x:Name="btnFirst" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="5,510,0,0" VerticalAlignment="Top" Width="100" Height="23" Click="btnFirst_Click"/>
         <TextBox x:Name="txtPage" HorizontalAlignment="Center" Height="23" Margin="472,510,472,5" TextAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" PreviewTextInput="txtPage_PreviewTextInput" TextChanged="txtPage_TextChanged"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Source="Images/top_2000.png" Height="61"/>
     </Grid>
 </Window>
