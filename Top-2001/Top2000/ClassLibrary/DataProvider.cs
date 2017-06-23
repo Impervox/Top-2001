@@ -60,10 +60,9 @@ namespace ClassLibrary
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
@@ -375,9 +374,10 @@ namespace ClassLibrary
                     if (!years.Contains(i))
                         returnValue.Add(i);
                     else
-                        for (int b = 0; b <= years.Count; b++)
-                            if (count[b] != 2000)
-                                returnValue.Add(i);
+                        for(int b = 0; b < years.Count; b++)
+                            if(years[b] == i)
+                                if(count[b] < 2000)
+                                    returnValue.Add(i);
                 }
                 return returnValue;
             }
