@@ -18,9 +18,17 @@ namespace Top2000
     /// <summary>
     /// Interaction logic for AddRecordWindow.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class AddRecordWindow : Window
     {
+        /// <summary>
+        /// The artist
+        /// </summary>
         Artist thisArtist;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddRecordWindow"/> class.
+        /// </summary>
         public AddRecordWindow()
         {
             InitializeComponent();
@@ -29,6 +37,11 @@ namespace Top2000
             FillComboBox();
         }
 
+        /// <summary>
+        /// Handles the PreviewTextInput event of the txtPosition control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextCompositionEventArgs"/> instance containing the event data.</param>
         private void txtPosition_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             char c = Convert.ToChar(e.Text);
@@ -39,6 +52,9 @@ namespace Top2000
 
             base.OnPreviewTextInput(e);
         }
+        /// <summary>
+        /// Fills the ComboBox.
+        /// </summary>
         private void FillComboBox()
         {
             cbYear.ItemsSource = DataProvider.GetYearsAndSongCount();
@@ -49,6 +65,11 @@ namespace Top2000
             cbArtist.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbArtist control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (Artist artist in DataProvider.allArtists)
@@ -58,6 +79,11 @@ namespace Top2000
             cbSong.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnAddRecord control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
             int position = int.Parse(txtPosition.Text);
@@ -76,6 +102,11 @@ namespace Top2000
                 }
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbFirstLetter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FillComboBox();

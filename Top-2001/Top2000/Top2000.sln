@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Top2000", "Top2000\Top2000.csproj", "{E5F03D72-7802-4D67-9883-D9976A830046}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{19F0DFFE-4CE8-4F80-A53A-962453529E6F}"
+EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "SandcastleTop2000", "SandcastleTop2000\SandcastleTop2000.shfbproj", "{6CC0125F-54CF-4EED-AE9D-F09C8E7BBF55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{19F0DFFE-4CE8-4F80-A53A-962453529E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F0DFFE-4CE8-4F80-A53A-962453529E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19F0DFFE-4CE8-4F80-A53A-962453529E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC0125F-54CF-4EED-AE9D-F09C8E7BBF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC0125F-54CF-4EED-AE9D-F09C8E7BBF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC0125F-54CF-4EED-AE9D-F09C8E7BBF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC0125F-54CF-4EED-AE9D-F09C8E7BBF55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,13 +8,31 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Artist
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
+        /// <summary>
+        /// The biography
+        /// </summary>
         private string biography;
+        /// <summary>
+        /// The URL
+        /// </summary>
         private string url;
-        
 
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Artist"/> class.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="biography">The biography.</param>
+        /// <param name="url">The URL.</param>
         public Artist(string name, string biography = null, string url = null)
         {
             this.name = name;
@@ -22,6 +40,12 @@ namespace ClassLibrary
             this.url = url;
         }
 
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name
         {
             get
@@ -35,6 +59,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets or sets the biography.
+        /// </summary>
+        /// <value>
+        /// The biography.
+        /// </value>
         public string Biography
         {
             get
@@ -48,6 +78,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets or sets the URL.
+        /// </summary>
+        /// <value>
+        /// The URL.
+        /// </value>
         public string Url
         {
             get

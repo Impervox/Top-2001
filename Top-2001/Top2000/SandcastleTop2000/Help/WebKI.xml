@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AddArtistWindow class">
+    <HelpKINode Title="AddArtistWindow Class" Url="html/c7eb543e-4f7e-afcc-f130-1167527e5090.htm" />
+    <HelpKINode Title="about AddArtistWindow class" Url="html/c7eb543e-4f7e-afcc-f130-1167527e5090.htm" />
+    <HelpKINode Title="constructor" Url="html/4149ad38-247e-ca45-1041-213a6aff08a1.htm" />
+    <HelpKINode Title="events" Url="html/0fe03bed-99fa-5bfa-caab-1af483e0c9fb.htm" />
+    <HelpKINode Title="methods" Url="html/82672418-18cf-bd63-517e-3c87eb094091.htm" />
+    <HelpKINode Title="properties" Url="html/6083ddf9-1b4a-b44c-3b0e-5076d44eaff0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddArtistWindow.AddArtistWindow constructor" Url="html/4149ad38-247e-ca45-1041-213a6aff08a1.htm" />
+  <HelpKINode Title="AddArtistWindow.InitializeComponent method" Url="html/92bdbb32-bbb8-748f-4ba9-1fdf318a0703.htm" />
+  <HelpKINode Title="AddRecord method" Url="html/fcdf7c56-ceff-7753-2e18-cf88325d05bf.htm" />
+  <HelpKINode Title="AddRecordWindow class">
+    <HelpKINode Title="AddRecordWindow Class" Url="html/7f90067b-b8ca-5a38-d1f5-7143725e6d95.htm" />
+    <HelpKINode Title="about AddRecordWindow class" Url="html/7f90067b-b8ca-5a38-d1f5-7143725e6d95.htm" />
+    <HelpKINode Title="constructor" Url="html/fcbee9e8-99eb-36fc-ea3b-c2ba2344090b.htm" />
+    <HelpKINode Title="events" Url="html/032c8d89-d24c-2401-21a0-9d09d785c00c.htm" />
+    <HelpKINode Title="methods" Url="html/e5a3083e-90ac-b5cb-7775-e0ac8b54ad3c.htm" />
+    <HelpKINode Title="properties" Url="html/bb98ea4a-df84-d1f7-44bf-18955b61ed74.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddRecordWindow.AddRecordWindow constructor" Url="html/fcbee9e8-99eb-36fc-ea3b-c2ba2344090b.htm" />
+  <HelpKINode Title="AddRecordWindow.InitializeComponent method" Url="html/1d9fe47a-75ba-c2b4-8b7a-1b3fc3415c5f.htm" />
+  <HelpKINode Title="AddSongWindow class">
+    <HelpKINode Title="AddSongWindow Class" Url="html/9e941f96-fa09-d7a9-44d8-cbd51e4f8206.htm" />
+    <HelpKINode Title="about AddSongWindow class" Url="html/9e941f96-fa09-d7a9-44d8-cbd51e4f8206.htm" />
+    <HelpKINode Title="constructor" Url="html/a54e4fdf-705a-9981-6985-c91fd14bd370.htm" />
+    <HelpKINode Title="events" Url="html/85483f0b-1ae2-ccfd-940e-4418fadca41d.htm" />
+    <HelpKINode Title="methods" Url="html/0ae448ac-f544-c4b9-df9f-62cca18ac58c.htm" />
+    <HelpKINode Title="properties" Url="html/aae173ae-bbc4-d63a-f318-40d981468cf6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddSongWindow.AddSongWindow constructor" Url="html/a54e4fdf-705a-9981-6985-c91fd14bd370.htm" />
+  <HelpKINode Title="AddSongWindow.InitializeComponent method" Url="html/b9531181-560c-86b9-fcb5-810d8012fdb4.htm" />
+  <HelpKINode Title="allArtists field" Url="html/0a6fbf6c-2a5f-e9da-fa4c-c47e84dde9a4.htm" />
+  <HelpKINode Title="allSongs field" Url="html/33f1386b-7959-a671-822f-8825bbba773f.htm" />
+  <HelpKINode Title="allYears field" Url="html/c23e34e4-6919-bb9e-d783-cbd3e9e1ffd1.htm" />
+  <HelpKINode Title="App class">
+    <HelpKINode Title="App Class" Url="html/0e9347be-a3df-919e-6ca4-799fa08b7c80.htm" />
+    <HelpKINode Title="about App class" Url="html/0e9347be-a3df-919e-6ca4-799fa08b7c80.htm" />
+    <HelpKINode Title="constructor" Url="html/abf798b8-8644-850c-7912-bda57149a6e8.htm" />
+    <HelpKINode Title="events" Url="html/ceddd6e0-33a8-41b0-c835-3f3a44717a9e.htm" />
+    <HelpKINode Title="methods" Url="html/1d957c60-4199-b680-5fb4-38f8f8a6ddf8.htm" />
+    <HelpKINode Title="properties" Url="html/0925e8d6-9ac5-002e-e6e2-ed26e7ed1e83.htm" />
+  </HelpKINode>
+  <HelpKINode Title="App.App constructor" Url="html/abf798b8-8644-850c-7912-bda57149a6e8.htm" />
+  <HelpKINode Title="App.InitializeComponent method" Url="html/0929516e-4140-c664-ea8f-b371405a4471.htm" />
+  <HelpKINode Title="App.Main method" Url="html/7f08fff9-a704-8cd2-745c-e850c4decd6f.htm" />
+  <HelpKINode Title="Artist class">
+    <HelpKINode Title="Artist Class" Url="html/e675af0e-073c-7db5-98b4-2734fb61e3df.htm" />
+    <HelpKINode Title="about Artist class" Url="html/e675af0e-073c-7db5-98b4-2734fb61e3df.htm" />
+    <HelpKINode Title="constructor" Url="html/f5adf1b5-03e6-f35f-0e41-3568698797fe.htm" />
+    <HelpKINode Title="methods" Url="html/2294dc31-9a2f-2cb4-074e-9efda8227aa1.htm" />
+    <HelpKINode Title="properties" Url="html/1dfe005f-7224-3200-31a6-0de50b0b2a64.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Artist property" Url="html/e0b4e2ab-c252-131d-aceb-70ec122f21d9.htm" />
+  <HelpKINode Title="Artist.Artist constructor" Url="html/f5adf1b5-03e6-f35f-0e41-3568698797fe.htm" />
+  <HelpKINode Title="Artist.Biography property" Url="html/dd767669-28eb-c9e7-8bb2-63d55ec4284b.htm" />
+  <HelpKINode Title="Artist.Name property" Url="html/ec185543-6e51-f550-1417-d51e61a6cbe8.htm" />
+  <HelpKINode Title="Artist.Url property" Url="html/9e4cf7fb-9e82-a37b-4927-13423fec8db9.htm" />
+  <HelpKINode Title="Biography property" Url="html/dd767669-28eb-c9e7-8bb2-63d55ec4284b.htm" />
+  <HelpKINode Title="ClassLibrary namespace" Url="html/7e57040a-e6cc-bb79-1796-47c8a6d467c7.htm" />
+  <HelpKINode Title="ClassLibrary.Artist class" Url="html/e675af0e-073c-7db5-98b4-2734fb61e3df.htm" />
+  <HelpKINode Title="ClassLibrary.DataProvider class" Url="html/66d08d2b-ec6d-4b9e-b857-af8cbc77d140.htm" />
+  <HelpKINode Title="ClassLibrary.Record class" Url="html/5e747862-d416-5062-600f-b57d7589e1fc.htm" />
+  <HelpKINode Title="ClassLibrary.Song class" Url="html/abe1256a-c9a0-3411-8ea6-7d7e2a2fa10c.htm" />
+  <HelpKINode Title="CreateArtist method" Url="html/86486b06-3905-35e6-ae01-6236a47a6481.htm" />
+  <HelpKINode Title="CreateSong method" Url="html/e8da0f16-75de-0f1b-7c0e-d96b0c9633cb.htm" />
+  <HelpKINode Title="DataProvider class">
+    <HelpKINode Title="DataProvider Class" Url="html/66d08d2b-ec6d-4b9e-b857-af8cbc77d140.htm" />
+    <HelpKINode Title="about DataProvider class" Url="html/66d08d2b-ec6d-4b9e-b857-af8cbc77d140.htm" />
+    <HelpKINode Title="fields" Url="html/27117d89-5a6a-377b-9af3-7661467ad610.htm" />
+    <HelpKINode Title="methods" Url="html/3242156e-9e69-93bf-6d65-dbc3a2d42166.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DataProvider.AddRecord method" Url="html/fcdf7c56-ceff-7753-2e18-cf88325d05bf.htm" />
+  <HelpKINode Title="DataProvider.allArtists field" Url="html/0a6fbf6c-2a5f-e9da-fa4c-c47e84dde9a4.htm" />
+  <HelpKINode Title="DataProvider.allSongs field" Url="html/33f1386b-7959-a671-822f-8825bbba773f.htm" />
+  <HelpKINode Title="DataProvider.allYears field" Url="html/c23e34e4-6919-bb9e-d783-cbd3e9e1ffd1.htm" />
+  <HelpKINode Title="DataProvider.CreateArtist method" Url="html/86486b06-3905-35e6-ae01-6236a47a6481.htm" />
+  <HelpKINode Title="DataProvider.CreateSong method" Url="html/e8da0f16-75de-0f1b-7c0e-d96b0c9633cb.htm" />
+  <HelpKINode Title="DataProvider.EditArtist method" Url="html/d8285ecb-7c41-94f1-0570-6e60445814ef.htm" />
+  <HelpKINode Title="DataProvider.EditSong method" Url="html/f951bad0-8d00-f697-5b5b-c40c9a2c92bb.htm" />
+  <HelpKINode Title="DataProvider.errorException field" Url="html/a0e6e7e3-3344-1d1b-e392-2b5acd6be05d.htm" />
+  <HelpKINode Title="DataProvider.GetAllArtists method" Url="html/7a2292ae-0fe9-13e3-1343-28e211367de3.htm" />
+  <HelpKINode Title="DataProvider.GetAllSongs method" Url="html/bc827bb8-f27c-2e8c-623b-5640a05f9bd2.htm" />
+  <HelpKINode Title="DataProvider.GetAllYears method" Url="html/ab91ecfb-e035-d1e7-9eb2-52ed5079f6f4.htm" />
+  <HelpKINode Title="DataProvider.GetFirstCharacters method" Url="html/b40d7fa7-bbf9-21f0-90c0-b621c61fb8b3.htm" />
+  <HelpKINode Title="DataProvider.GetYearsAndSongCount method" Url="html/ad2889a6-33ac-9d03-b62c-f685861e0684.htm" />
+  <HelpKINode Title="DataProvider.loadData method" Url="html/40164574-a772-7247-2f0e-efb1957c2173.htm" />
+  <HelpKINode Title="DataProvider.RemoveArtist method" Url="html/acf4a921-8df4-4a8c-82f3-db7d78c56cc4.htm" />
+  <HelpKINode Title="DataProvider.RemoveSong method" Url="html/330f59f6-ed24-dcad-a2d5-8515aaeccc71.htm" />
+  <HelpKINode Title="DataProvider.SongsOfArtist method" Url="html/3dd57040-da4a-9b7a-aa36-08017ea0d5e4.htm" />
+  <HelpKINode Title="EditArtist method" Url="html/d8285ecb-7c41-94f1-0570-6e60445814ef.htm" />
+  <HelpKINode Title="EditArtistWindow class">
+    <HelpKINode Title="EditArtistWindow Class" Url="html/dc339243-4761-7111-80c2-6105cac406b3.htm" />
+    <HelpKINode Title="about EditArtistWindow class" Url="html/dc339243-4761-7111-80c2-6105cac406b3.htm" />
+    <HelpKINode Title="constructor" Url="html/8b32c930-2b5f-c067-cfe0-153068458d67.htm" />
+    <HelpKINode Title="events" Url="html/fdf6f7a4-ee91-a8da-f9f3-39752b913194.htm" />
+    <HelpKINode Title="methods" Url="html/797f0f6a-c01a-82ca-c85e-df95e16c79f5.htm" />
+    <HelpKINode Title="properties" Url="html/19ccb019-b95c-c815-b834-2ffe3f151799.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EditArtistWindow.EditArtistWindow constructor" Url="html/8b32c930-2b5f-c067-cfe0-153068458d67.htm" />
+  <HelpKINode Title="EditArtistWindow.InitializeComponent method" Url="html/b6cd142d-c616-0857-809f-12aa09f0018c.htm" />
+  <HelpKINode Title="EditSong method" Url="html/f951bad0-8d00-f697-5b5b-c40c9a2c92bb.htm" />
+  <HelpKINode Title="EditSongWindow class">
+    <HelpKINode Title="EditSongWindow Class" Url="html/02e59306-62db-b8e6-14e2-2a3e5e5d3b00.htm" />
+    <HelpKINode Title="about EditSongWindow class" Url="html/02e59306-62db-b8e6-14e2-2a3e5e5d3b00.htm" />
+    <HelpKINode Title="constructor" Url="html/ad4c7ce4-267b-197c-8fa9-2304d660f460.htm" />
+    <HelpKINode Title="events" Url="html/862ac18d-fec4-90d4-0ce6-f121474fae20.htm" />
+    <HelpKINode Title="methods" Url="html/6874b5f3-a747-7fb4-d9de-58963542bf90.htm" />
+    <HelpKINode Title="properties" Url="html/bd54bb8d-5133-96c1-7566-32fda6e8a9e7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EditSongWindow.EditSongWindow constructor" Url="html/ad4c7ce4-267b-197c-8fa9-2304d660f460.htm" />
+  <HelpKINode Title="EditSongWindow.InitializeComponent method" Url="html/d459c553-cc60-4c9f-dae1-6553140d64f9.htm" />
+  <HelpKINode Title="errorException field" Url="html/a0e6e7e3-3344-1d1b-e392-2b5acd6be05d.htm" />
+  <HelpKINode Title="GetAllArtists method" Url="html/7a2292ae-0fe9-13e3-1343-28e211367de3.htm" />
+  <HelpKINode Title="GetAllSongs method" Url="html/bc827bb8-f27c-2e8c-623b-5640a05f9bd2.htm" />
+  <HelpKINode Title="GetAllYears method" Url="html/ab91ecfb-e035-d1e7-9eb2-52ed5079f6f4.htm" />
+  <HelpKINode Title="GetFirstCharacters method" Url="html/b40d7fa7-bbf9-21f0-90c0-b621c61fb8b3.htm" />
+  <HelpKINode Title="GetYearsAndSongCount method" Url="html/ad2889a6-33ac-9d03-b62c-f685861e0684.htm" />
+  <HelpKINode Title="InitializeComponent method">
+    <HelpKINode Title="AddArtistWindow.InitializeComponent Method " Url="html/92bdbb32-bbb8-748f-4ba9-1fdf318a0703.htm" />
+    <HelpKINode Title="AddRecordWindow.InitializeComponent Method " Url="html/1d9fe47a-75ba-c2b4-8b7a-1b3fc3415c5f.htm" />
+    <HelpKINode Title="AddSongWindow.InitializeComponent Method " Url="html/b9531181-560c-86b9-fcb5-810d8012fdb4.htm" />
+    <HelpKINode Title="App.InitializeComponent Method " Url="html/0929516e-4140-c664-ea8f-b371405a4471.htm" />
+    <HelpKINode Title="EditArtistWindow.InitializeComponent Method " Url="html/b6cd142d-c616-0857-809f-12aa09f0018c.htm" />
+    <HelpKINode Title="EditSongWindow.InitializeComponent Method " Url="html/d459c553-cc60-4c9f-dae1-6553140d64f9.htm" />
+    <HelpKINode Title="MainWindow.InitializeComponent Method " Url="html/6cf8f2c3-4fce-7292-61dc-c9d94d232552.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Intro property" Url="html/39fe6df0-a514-7510-a06b-cbda92d7ce24.htm" />
+  <HelpKINode Title="loadData method" Url="html/40164574-a772-7247-2f0e-efb1957c2173.htm" />
+  <HelpKINode Title="Lyrics property" Url="html/43cdd76d-3d7f-d26a-8f99-cddf89e90268.htm" />
+  <HelpKINode Title="Main method" Url="html/7f08fff9-a704-8cd2-745c-e850c4decd6f.htm" />
+  <HelpKINode Title="MainWindow class">
+    <HelpKINode Title="MainWindow Class" Url="html/07a2d1c6-006b-e8d5-a64c-8b4016ba27ca.htm" />
+    <HelpKINode Title="about MainWindow class" Url="html/07a2d1c6-006b-e8d5-a64c-8b4016ba27ca.htm" />
+    <HelpKINode Title="constructor" Url="html/4096fc46-faf1-af62-f741-6a731ccd8c5a.htm" />
+    <HelpKINode Title="events" Url="html/1e44ea5a-4465-61b6-9bc0-666a323a6fa6.htm" />
+    <HelpKINode Title="methods" Url="html/40a2e610-82f1-b910-0fea-30566016a024.htm" />
+    <HelpKINode Title="properties" Url="html/01efc0db-a15c-ea9e-1863-72ff0c349d6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MainWindow.InitializeComponent method" Url="html/6cf8f2c3-4fce-7292-61dc-c9d94d232552.htm" />
+  <HelpKINode Title="MainWindow.MainWindow constructor" Url="html/4096fc46-faf1-af62-f741-6a731ccd8c5a.htm" />
+  <HelpKINode Title="Name property" Url="html/ec185543-6e51-f550-1417-d51e61a6cbe8.htm" />
+  <HelpKINode Title="Position property" Url="html/906c4031-94b6-0a1e-4e71-167989e211a1.htm" />
+  <HelpKINode Title="Record class">
+    <HelpKINode Title="Record Class" Url="html/5e747862-d416-5062-600f-b57d7589e1fc.htm" />
+    <HelpKINode Title="about Record class" Url="html/5e747862-d416-5062-600f-b57d7589e1fc.htm" />
+    <HelpKINode Title="constructor" Url="html/1bd57ace-7a7f-a17d-a267-3286c009d3d8.htm" />
+    <HelpKINode Title="methods" Url="html/8999d499-8c71-e058-5867-1b7ecc13b7bd.htm" />
+    <HelpKINode Title="properties" Url="html/13fcae8b-69d9-6b1f-8e1d-8e3599438720.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Record.Artist property" Url="html/e0b4e2ab-c252-131d-aceb-70ec122f21d9.htm" />
+  <HelpKINode Title="Record.Position property" Url="html/906c4031-94b6-0a1e-4e71-167989e211a1.htm" />
+  <HelpKINode Title="Record.Record constructor" Url="html/1bd57ace-7a7f-a17d-a267-3286c009d3d8.htm" />
+  <HelpKINode Title="Record.Title property" Url="html/a47d49ad-a2f8-f03a-1173-728f196edce8.htm" />
+  <HelpKINode Title="Record.Year property" Url="html/05fd3361-822c-4ce4-0645-ce2b5ca2bab0.htm" />
+  <HelpKINode Title="RemoveArtist method" Url="html/acf4a921-8df4-4a8c-82f3-db7d78c56cc4.htm" />
+  <HelpKINode Title="RemoveSong method" Url="html/330f59f6-ed24-dcad-a2d5-8515aaeccc71.htm" />
+  <HelpKINode Title="Song class">
+    <HelpKINode Title="Song Class" Url="html/abe1256a-c9a0-3411-8ea6-7d7e2a2fa10c.htm" />
+    <HelpKINode Title="about Song class" Url="html/abe1256a-c9a0-3411-8ea6-7d7e2a2fa10c.htm" />
+    <HelpKINode Title="constructor" Url="html/d7248630-7367-0737-ed77-8bacf4bb15e1.htm" />
+    <HelpKINode Title="methods" Url="html/45156328-99e4-08ee-b70d-49bcc41e688b.htm" />
+    <HelpKINode Title="properties" Url="html/065d0673-4660-dc71-196c-b371914506d2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Song.Intro property" Url="html/39fe6df0-a514-7510-a06b-cbda92d7ce24.htm" />
+  <HelpKINode Title="Song.Lyrics property" Url="html/43cdd76d-3d7f-d26a-8f99-cddf89e90268.htm" />
+  <HelpKINode Title="Song.Song constructor" Url="html/d7248630-7367-0737-ed77-8bacf4bb15e1.htm" />
+  <HelpKINode Title="Song.Title property" Url="html/2b93241b-daf1-b1a4-d52d-ce1b442acc34.htm" />
+  <HelpKINode Title="Song.Year property" Url="html/f2fc8429-09b5-3f65-8a37-9cf792f2e3f8.htm" />
+  <HelpKINode Title="SongsOfArtist method" Url="html/3dd57040-da4a-9b7a-aa36-08017ea0d5e4.htm" />
+  <HelpKINode Title="Title property">
+    <HelpKINode Title="Record.Title Property " Url="html/a47d49ad-a2f8-f03a-1173-728f196edce8.htm" />
+    <HelpKINode Title="Song.Title Property " Url="html/2b93241b-daf1-b1a4-d52d-ce1b442acc34.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Top2000 namespace" Url="html/31703d66-a2d6-df8c-caf5-9f88381b1b5c.htm" />
+  <HelpKINode Title="Top2000.AddArtistWindow class" Url="html/c7eb543e-4f7e-afcc-f130-1167527e5090.htm" />
+  <HelpKINode Title="Top2000.AddRecordWindow class" Url="html/7f90067b-b8ca-5a38-d1f5-7143725e6d95.htm" />
+  <HelpKINode Title="Top2000.AddSongWindow class" Url="html/9e941f96-fa09-d7a9-44d8-cbd51e4f8206.htm" />
+  <HelpKINode Title="Top2000.App class" Url="html/0e9347be-a3df-919e-6ca4-799fa08b7c80.htm" />
+  <HelpKINode Title="Top2000.EditArtistWindow class" Url="html/dc339243-4761-7111-80c2-6105cac406b3.htm" />
+  <HelpKINode Title="Top2000.EditSongWindow class" Url="html/02e59306-62db-b8e6-14e2-2a3e5e5d3b00.htm" />
+  <HelpKINode Title="Top2000.MainWindow class" Url="html/07a2d1c6-006b-e8d5-a64c-8b4016ba27ca.htm" />
+  <HelpKINode Title="Url property" Url="html/9e4cf7fb-9e82-a37b-4927-13423fec8db9.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/468e0e47-5a4c-477e-b96f-307de26f0b7e.htm" />
+    <HelpKINode Title="history" Url="html/f5385fc5-0f6e-408b-861e-4cf678da797a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/a566e34d-1246-4673-be5a-4b04b90e0b3c.htm" />
+  <HelpKINode Title="Year property">
+    <HelpKINode Title="Record.Year Property " Url="html/05fd3361-822c-4ce4-0645-ce2b5ca2bab0.htm" />
+    <HelpKINode Title="Song.Year Property " Url="html/f2fc8429-09b5-3f65-8a37-9cf792f2e3f8.htm" />
+  </HelpKINode>
+</HelpKI>

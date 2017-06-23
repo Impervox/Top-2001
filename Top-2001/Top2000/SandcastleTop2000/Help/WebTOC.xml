@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the [TODO: Add project name]" Url="html/a566e34d-1246-4673-be5a-4b04b90e0b3c.htm" />
+  <HelpTOCNode Id="a21b7164-21b1-4cec-a49b-7d5b48a2f130" Title="Version History" Url="html/f5385fc5-0f6e-408b-861e-4cf678da797a.htm">
+    <HelpTOCNode Title="Version 1.0.0.0" Url="html/468e0e47-5a4c-477e-b96f-307de26f0b7e.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="190d645a-9cc1-4443-ae57-6882e382835d" Title="ClassLibrary" Url="html/7e57040a-e6cc-bb79-1796-47c8a6d467c7.htm">
+    <HelpTOCNode Id="e3566dcd-2d9d-4167-b6d6-ad087db777bd" Title="Artist Class" Url="html/e675af0e-073c-7db5-98b4-2734fb61e3df.htm">
+      <HelpTOCNode Title="Artist Constructor " Url="html/f5adf1b5-03e6-f35f-0e41-3568698797fe.htm" />
+      <HelpTOCNode Id="78ea3876-a91c-4e53-862e-94dae5d8f41d" Title="Artist Properties" Url="html/1dfe005f-7224-3200-31a6-0de50b0b2a64.htm">
+        <HelpTOCNode Title="Biography Property " Url="html/dd767669-28eb-c9e7-8bb2-63d55ec4284b.htm" />
+        <HelpTOCNode Title="Name Property " Url="html/ec185543-6e51-f550-1417-d51e61a6cbe8.htm" />
+        <HelpTOCNode Title="Url Property " Url="html/9e4cf7fb-9e82-a37b-4927-13423fec8db9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Artist Methods" Url="html/2294dc31-9a2f-2cb4-074e-9efda8227aa1.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="737ea6b4-5c19-4dba-9102-385e60f00a7c" Title="DataProvider Class" Url="html/66d08d2b-ec6d-4b9e-b857-af8cbc77d140.htm">
+      <HelpTOCNode Id="5c46c1fc-46dd-45c9-b7fd-e74399c69948" Title="DataProvider Methods" Url="html/3242156e-9e69-93bf-6d65-dbc3a2d42166.htm">
+        <HelpTOCNode Title="AddRecord Method " Url="html/fcdf7c56-ceff-7753-2e18-cf88325d05bf.htm" />
+        <HelpTOCNode Title="CreateArtist Method " Url="html/86486b06-3905-35e6-ae01-6236a47a6481.htm" />
+        <HelpTOCNode Title="CreateSong Method " Url="html/e8da0f16-75de-0f1b-7c0e-d96b0c9633cb.htm" />
+        <HelpTOCNode Title="EditArtist Method " Url="html/d8285ecb-7c41-94f1-0570-6e60445814ef.htm" />
+        <HelpTOCNode Title="EditSong Method " Url="html/f951bad0-8d00-f697-5b5b-c40c9a2c92bb.htm" />
+        <HelpTOCNode Title="GetAllArtists Method " Url="html/7a2292ae-0fe9-13e3-1343-28e211367de3.htm" />
+        <HelpTOCNode Title="GetAllSongs Method " Url="html/bc827bb8-f27c-2e8c-623b-5640a05f9bd2.htm" />
+        <HelpTOCNode Title="GetAllYears Method " Url="html/ab91ecfb-e035-d1e7-9eb2-52ed5079f6f4.htm" />
+        <HelpTOCNode Title="GetFirstCharacters Method " Url="html/b40d7fa7-bbf9-21f0-90c0-b621c61fb8b3.htm" />
+        <HelpTOCNode Title="GetYearsAndSongCount Method " Url="html/ad2889a6-33ac-9d03-b62c-f685861e0684.htm" />
+        <HelpTOCNode Title="loadData Method " Url="html/40164574-a772-7247-2f0e-efb1957c2173.htm" />
+        <HelpTOCNode Title="RemoveArtist Method " Url="html/acf4a921-8df4-4a8c-82f3-db7d78c56cc4.htm" />
+        <HelpTOCNode Title="RemoveSong Method " Url="html/330f59f6-ed24-dcad-a2d5-8515aaeccc71.htm" />
+        <HelpTOCNode Title="SongsOfArtist Method " Url="html/3dd57040-da4a-9b7a-aa36-08017ea0d5e4.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="115b23b4-4057-4b70-b6c8-84940a5607cf" Title="DataProvider Fields" Url="html/27117d89-5a6a-377b-9af3-7661467ad610.htm">
+        <HelpTOCNode Title="allArtists Field" Url="html/0a6fbf6c-2a5f-e9da-fa4c-c47e84dde9a4.htm" />
+        <HelpTOCNode Title="allSongs Field" Url="html/33f1386b-7959-a671-822f-8825bbba773f.htm" />
+        <HelpTOCNode Title="allYears Field" Url="html/c23e34e4-6919-bb9e-d783-cbd3e9e1ffd1.htm" />
+        <HelpTOCNode Title="errorException Field" Url="html/a0e6e7e3-3344-1d1b-e392-2b5acd6be05d.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="e00287fc-d954-4254-996d-e9ffaae15363" Title="Record Class" Url="html/5e747862-d416-5062-600f-b57d7589e1fc.htm">
+      <HelpTOCNode Title="Record Constructor " Url="html/1bd57ace-7a7f-a17d-a267-3286c009d3d8.htm" />
+      <HelpTOCNode Id="c170a473-9a7f-4eff-a58d-ad28c8cad036" Title="Record Properties" Url="html/13fcae8b-69d9-6b1f-8e1d-8e3599438720.htm">
+        <HelpTOCNode Title="Artist Property " Url="html/e0b4e2ab-c252-131d-aceb-70ec122f21d9.htm" />
+        <HelpTOCNode Title="Position Property " Url="html/906c4031-94b6-0a1e-4e71-167989e211a1.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/a47d49ad-a2f8-f03a-1173-728f196edce8.htm" />
+        <HelpTOCNode Title="Year Property " Url="html/05fd3361-822c-4ce4-0645-ce2b5ca2bab0.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Record Methods" Url="html/8999d499-8c71-e058-5867-1b7ecc13b7bd.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="1ba249df-8f14-4076-9f9d-d00c4bf66882" Title="Song Class" Url="html/abe1256a-c9a0-3411-8ea6-7d7e2a2fa10c.htm">
+      <HelpTOCNode Title="Song Constructor " Url="html/d7248630-7367-0737-ed77-8bacf4bb15e1.htm" />
+      <HelpTOCNode Id="a1107f10-17a0-456c-8635-586c9e22a3b3" Title="Song Properties" Url="html/065d0673-4660-dc71-196c-b371914506d2.htm">
+        <HelpTOCNode Title="Intro Property " Url="html/39fe6df0-a514-7510-a06b-cbda92d7ce24.htm" />
+        <HelpTOCNode Title="Lyrics Property " Url="html/43cdd76d-3d7f-d26a-8f99-cddf89e90268.htm" />
+        <HelpTOCNode Title="Title Property " Url="html/2b93241b-daf1-b1a4-d52d-ce1b442acc34.htm" />
+        <HelpTOCNode Title="Year Property " Url="html/f2fc8429-09b5-3f65-8a37-9cf792f2e3f8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="Song Methods" Url="html/45156328-99e4-08ee-b70d-49bcc41e688b.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="e1e43c63-1d59-4a15-9afc-8d6edcbc84d0" Title="Top2000" Url="html/31703d66-a2d6-df8c-caf5-9f88381b1b5c.htm">
+    <HelpTOCNode Id="b4ee316b-e343-4e14-b82e-dc1f1ecbb46d" Title="AddArtistWindow Class" Url="html/c7eb543e-4f7e-afcc-f130-1167527e5090.htm">
+      <HelpTOCNode Title="AddArtistWindow Constructor " Url="html/4149ad38-247e-ca45-1041-213a6aff08a1.htm" />
+      <HelpTOCNode Title="AddArtistWindow Properties" Url="html/6083ddf9-1b4a-b44c-3b0e-5076d44eaff0.htm" />
+      <HelpTOCNode Id="3295c858-2545-4caa-9017-ae4e5fd99099" Title="AddArtistWindow Methods" Url="html/82672418-18cf-bd63-517e-3c87eb094091.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/92bdbb32-bbb8-748f-4ba9-1fdf318a0703.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AddArtistWindow Events" Url="html/0fe03bed-99fa-5bfa-caab-1af483e0c9fb.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="419d77bd-f5f0-4a6e-a8de-af21c1aadaf8" Title="AddRecordWindow Class" Url="html/7f90067b-b8ca-5a38-d1f5-7143725e6d95.htm">
+      <HelpTOCNode Title="AddRecordWindow Constructor " Url="html/fcbee9e8-99eb-36fc-ea3b-c2ba2344090b.htm" />
+      <HelpTOCNode Title="AddRecordWindow Properties" Url="html/bb98ea4a-df84-d1f7-44bf-18955b61ed74.htm" />
+      <HelpTOCNode Id="71128c2e-ca35-47da-9f2f-f38d5202f284" Title="AddRecordWindow Methods" Url="html/e5a3083e-90ac-b5cb-7775-e0ac8b54ad3c.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/1d9fe47a-75ba-c2b4-8b7a-1b3fc3415c5f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AddRecordWindow Events" Url="html/032c8d89-d24c-2401-21a0-9d09d785c00c.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="bcc1343e-1a1e-4579-a3f8-4096a32b5c9f" Title="AddSongWindow Class" Url="html/9e941f96-fa09-d7a9-44d8-cbd51e4f8206.htm">
+      <HelpTOCNode Title="AddSongWindow Constructor " Url="html/a54e4fdf-705a-9981-6985-c91fd14bd370.htm" />
+      <HelpTOCNode Title="AddSongWindow Properties" Url="html/aae173ae-bbc4-d63a-f318-40d981468cf6.htm" />
+      <HelpTOCNode Id="0dc6d02a-a2c9-468d-b53a-ab771c78399e" Title="AddSongWindow Methods" Url="html/0ae448ac-f544-c4b9-df9f-62cca18ac58c.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/b9531181-560c-86b9-fcb5-810d8012fdb4.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="AddSongWindow Events" Url="html/85483f0b-1ae2-ccfd-940e-4418fadca41d.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e9953ed9-d0f2-4677-a5fb-7e433635f94c" Title="App Class" Url="html/0e9347be-a3df-919e-6ca4-799fa08b7c80.htm">
+      <HelpTOCNode Title="App Constructor " Url="html/abf798b8-8644-850c-7912-bda57149a6e8.htm" />
+      <HelpTOCNode Title="App Properties" Url="html/0925e8d6-9ac5-002e-e6e2-ed26e7ed1e83.htm" />
+      <HelpTOCNode Id="220f4e95-b636-46e7-9895-cbbc49d2fce0" Title="App Methods" Url="html/1d957c60-4199-b680-5fb4-38f8f8a6ddf8.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/0929516e-4140-c664-ea8f-b371405a4471.htm" />
+        <HelpTOCNode Title="Main Method " Url="html/7f08fff9-a704-8cd2-745c-e850c4decd6f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="App Events" Url="html/ceddd6e0-33a8-41b0-c835-3f3a44717a9e.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="17d1a960-571d-42e9-8df2-57dc57ffef27" Title="EditArtistWindow Class" Url="html/dc339243-4761-7111-80c2-6105cac406b3.htm">
+      <HelpTOCNode Title="EditArtistWindow Constructor " Url="html/8b32c930-2b5f-c067-cfe0-153068458d67.htm" />
+      <HelpTOCNode Title="EditArtistWindow Properties" Url="html/19ccb019-b95c-c815-b834-2ffe3f151799.htm" />
+      <HelpTOCNode Id="e92e6c17-49a4-4e8b-b2f1-f8ee6f788742" Title="EditArtistWindow Methods" Url="html/797f0f6a-c01a-82ca-c85e-df95e16c79f5.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/b6cd142d-c616-0857-809f-12aa09f0018c.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EditArtistWindow Events" Url="html/fdf6f7a4-ee91-a8da-f9f3-39752b913194.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="e92ac3fa-1b4b-426a-b085-abc22794c9b2" Title="EditSongWindow Class" Url="html/02e59306-62db-b8e6-14e2-2a3e5e5d3b00.htm">
+      <HelpTOCNode Title="EditSongWindow Constructor " Url="html/ad4c7ce4-267b-197c-8fa9-2304d660f460.htm" />
+      <HelpTOCNode Title="EditSongWindow Properties" Url="html/bd54bb8d-5133-96c1-7566-32fda6e8a9e7.htm" />
+      <HelpTOCNode Id="fc36d65b-a7dc-4dfd-8187-cd46140cbda7" Title="EditSongWindow Methods" Url="html/6874b5f3-a747-7fb4-d9de-58963542bf90.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/d459c553-cc60-4c9f-dae1-6553140d64f9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="EditSongWindow Events" Url="html/862ac18d-fec4-90d4-0ce6-f121474fae20.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="57a2b098-0131-4241-b9fb-e0f899d5ffac" Title="MainWindow Class" Url="html/07a2d1c6-006b-e8d5-a64c-8b4016ba27ca.htm">
+      <HelpTOCNode Title="MainWindow Constructor " Url="html/4096fc46-faf1-af62-f741-6a731ccd8c5a.htm" />
+      <HelpTOCNode Title="MainWindow Properties" Url="html/01efc0db-a15c-ea9e-1863-72ff0c349d6c.htm" />
+      <HelpTOCNode Id="7a879352-5575-45a9-bf11-48019692de76" Title="MainWindow Methods" Url="html/40a2e610-82f1-b910-0fea-30566016a024.htm">
+        <HelpTOCNode Title="InitializeComponent Method " Url="html/6cf8f2c3-4fce-7292-61dc-c9d94d232552.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="MainWindow Events" Url="html/1e44ea5a-4465-61b6-9bc0-666a323a6fa6.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

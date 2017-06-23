@@ -21,10 +21,21 @@ namespace Top2000
     /// <summary>
     /// Interaction logic for EditSongWindow.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class EditSongWindow : Window
     {
+        /// <summary>
+        /// The this artist
+        /// </summary>
         Artist thisArtist;
+        /// <summary>
+        /// The this song
+        /// </summary>
         Song ThisSong;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditSongWindow"/> class.
+        /// </summary>
         public EditSongWindow()
         {
             InitializeComponent();
@@ -33,6 +44,9 @@ namespace Top2000
             FillData();
         }
 
+        /// <summary>
+        /// Fills the data.
+        /// </summary>
         private void FillData()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
@@ -41,6 +55,11 @@ namespace Top2000
             cbArtist.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Handles the PreviewTextInput event of the txtYear control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="TextCompositionEventArgs"/> instance containing the event data.</param>
         private void txtYear_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             char c = Convert.ToChar(e.Text);
@@ -52,6 +71,11 @@ namespace Top2000
             base.OnPreviewTextInput(e);
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbArtist control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //fill cbSongs with songs of this artist.
@@ -63,6 +87,11 @@ namespace Top2000
             cbSong.ItemsSource = DataProvider.SongsOfArtist(thisArtist.Name);
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbSong control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //get the song that will be edited.
@@ -76,6 +105,11 @@ namespace Top2000
             txtLyrics.Text = ThisSong.Lyrics;
         }
 
+        /// <summary>
+        /// Handles the Drop event of the txtLyrics control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void txtLyrics_Drop(object sender, DragEventArgs e)
         {
             string path;
@@ -95,6 +129,11 @@ namespace Top2000
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnEditSong control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnEditSong_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -114,6 +153,11 @@ namespace Top2000
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnRemoveSong control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnRemoveSong_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -133,11 +177,21 @@ namespace Top2000
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewDragOver event of the txtLyrics control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void txtLyrics_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbFirstLetter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FillData();
