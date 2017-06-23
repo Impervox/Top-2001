@@ -19,8 +19,13 @@ namespace Top2000
     /// <summary>
     /// Interaction logic for EditArtistWindow.xaml
     /// </summary>
+    /// <seealso cref="System.Windows.Window" />
+    /// <seealso cref="System.Windows.Markup.IComponentConnector" />
     public partial class EditArtistWindow : Window
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditArtistWindow"/> class.
+        /// </summary>
         public EditArtistWindow()
         {
             InitializeComponent();
@@ -29,6 +34,11 @@ namespace Top2000
             FillComboBox();
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbArtist control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(String.IsNullOrEmpty((string)cbArtist.SelectedValue))
@@ -43,6 +53,11 @@ namespace Top2000
             txtUrl.Text = artist.Url;
         }
 
+        /// <summary>
+        /// Handles the Drop event of the txtBiography control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void txtBiography_Drop(object sender, DragEventArgs e)
         {
             string path;
@@ -61,7 +76,12 @@ namespace Top2000
                     MessageBox.Show("U kunt maximaal 1 bestand in dit veld droppen.", "Error");
             }
         }
-                
+
+        /// <summary>
+        /// Handles the Click event of the btnEditArtist control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -83,6 +103,11 @@ namespace Top2000
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnRemoveArtist control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void btnRemoveArtist_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -109,11 +134,19 @@ namespace Top2000
             }
         }
 
+        /// <summary>
+        /// Handles the PreviewDragOver event of the txtBiography control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="DragEventArgs"/> instance containing the event data.</param>
         private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
         }
 
+        /// <summary>
+        /// Fills the ComboBox.
+        /// </summary>
         private void FillComboBox()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
@@ -122,6 +155,11 @@ namespace Top2000
             cbArtist.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Handles the SelectionChanged event of the cbFirstLetter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void cbFirstLetter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FillComboBox();

@@ -8,17 +8,43 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        /// <summary>
+        /// The connection
+        /// </summary>
+        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        /// <summary>
+        /// The currently shown records
+        /// </summary>
         static List<Record> currentlyShownRecords = new List<Record>();
+        /// <summary>
+        /// The error exception
+        /// </summary>
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
+        /// <summary>
+        /// All years
+        /// </summary>
         public static List<int> allYears = GetAllYears();
+        /// <summary>
+        /// All artists
+        /// </summary>
         public static List<Artist> allArtists = GetAllArtists();
+        /// <summary>
+        /// All songs
+        /// </summary>
         public static List<Song> allSongs = GetAllSongs();
 
+        /// <summary>
+        /// Gets all years.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static List<int> GetAllYears()
         {
             List<int> list = new List<int>();
@@ -44,6 +70,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets all artists.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static List<Artist> GetAllArtists()
         {
             List<Artist> list = new List<Artist>();
@@ -70,6 +101,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets all songs.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static List<Song> GetAllSongs()
         {
             List<Song> list = new List<Song>();
@@ -96,6 +132,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Edits the song.
+        /// </summary>
+        /// <param name="thisSong">The this song.</param>
+        /// <exception cref="System.Exception"></exception>
         public static void EditSong(Song thisSong)
         {
             SqlCommand cmd = new SqlCommand("spEditSong", conn);
@@ -125,6 +166,14 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Loads the data.
+        /// </summary>
+        /// <param name="year">The year.</param>
+        /// <param name="first">The first.</param>
+        /// <param name="last">The last.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static DataView loadData(int year, int first, int last)
         {
             SqlCommand cmd = new SqlCommand("spSongsByPosition", conn);
@@ -150,6 +199,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Removes the song.
+        /// </summary>
+        /// <param name="thisSong">The this song.</param>
+        /// <param name="thisArtist">The this artist.</param>
+        /// <exception cref="System.Exception"></exception>
         public static void RemoveSong(Song thisSong, Artist thisArtist)
         {
             //if this song is not in top2000 previous years then delete.
@@ -175,6 +230,15 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Creates the song.
+        /// </summary>
+        /// <param name="artist">The artist.</param>
+        /// <param name="title">The title.</param>
+        /// <param name="year">The year.</param>
+        /// <param name="lyrics">The lyrics.</param>
+        /// <exception cref="System.Exception">
+        /// </exception>
         public static void CreateSong(string artist, string title, int year, string lyrics)
         {
             foreach (Song s in GetAllSongs())
@@ -205,6 +269,14 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Creates the artist.
+        /// </summary>
+        /// <param name="artist">The artist.</param>
+        /// <param name="biography">The biography.</param>
+        /// <param name="url">The URL.</param>
+        /// <exception cref="System.Exception">
+        /// </exception>
         public static void CreateArtist(string artist, string biography, string url)
         {
             foreach (Artist art in GetAllArtists())
@@ -235,6 +307,12 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Songses the of artist.
+        /// </summary>
+        /// <param name="artist">The artist.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static List<string> SongsOfArtist(string artist)
         {
             List<string> list = new List<string>();
@@ -262,6 +340,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets the first characters.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static char[] GetFirstCharacters()
         {
             string characters = "";
@@ -287,6 +370,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Removes the artist.
+        /// </summary>
+        /// <param name="artist">The artist.</param>
+        /// <exception cref="System.Exception"></exception>
         public static void RemoveArtist(string artist)
         {
             SqlCommand cmd = new SqlCommand("spRemoveArtist", conn);
@@ -312,6 +400,14 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Edits the artist.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="newName">The new name.</param>
+        /// <param name="url">The URL.</param>
+        /// <param name="biography">The biography.</param>
+        /// <exception cref="System.Exception"></exception>
         public static void EditArtist(string name, string newName, string url = null, string biography = null)
         {
             SqlCommand cmd = new SqlCommand("spEditArtist", conn);
@@ -336,6 +432,14 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Adds the record.
+        /// </summary>
+        /// <param name="artist">The artist.</param>
+        /// <param name="song">The song.</param>
+        /// <param name="position">The position.</param>
+        /// <param name="year">The year.</param>
+        /// <exception cref="System.Exception"></exception>
         public static void AddRecord(string artist, string song, int position, int year)
         {
             SqlCommand cmd = new SqlCommand("spAddRecord", conn);
@@ -360,6 +464,11 @@ namespace ClassLibrary
             }
         }
 
+        /// <summary>
+        /// Gets the years and song count.
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="System.Exception"></exception>
         public static List<int> GetYearsAndSongCount()
         {
             List<int> returnValue = new List<int>();
