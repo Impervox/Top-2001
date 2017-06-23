@@ -24,14 +24,13 @@ namespace Top2000
         public EditArtistWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
             cbFirstLetter.SelectedIndex = 0;
             FillComboBox();
         }
 
         private void cbArtist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //TODO:changed artist selection, the artist that will be changed or removed.
             if(String.IsNullOrEmpty((string)cbArtist.SelectedValue))
             {
                 cbArtist.SelectedIndex = 0;
@@ -62,34 +61,26 @@ namespace Top2000
                     MessageBox.Show("U kunt maximaal 1 bestand in dit veld droppen.", "Error");
             }
         }
-
-        private void txtUrl_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            //TODO: controlle op geldig email adress (optioneel).
-        }
-
-        private void btnImage_Click(object sender, RoutedEventArgs e)
-        {
-            //TODO: browse image implementation (optioneel).
-        }
-
+                
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 if (txtArtist.Text != "")
                 {
-                    //TODO: Edit artist procedure, artist can't have a song in a previous list.
-                    MessageBox.Show("Artiest aangepast.");
+                    //TODO: Edit artist procedure, artist can't have a song in a previous list.(edit: why? onnodige todo?)
+                    DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
+                    MessageBox.Show("Artiest aangepast.", "Succes");
+                    FillComboBox();
                 }
                 else
                 {
-                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                    MessageBox.Show("Artiest naam is een verplicht veld.", "Ongeldig");
                 }
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 
@@ -102,20 +93,20 @@ namespace Top2000
                     if (DataProvider.SongsOfArtist(cbArtist.SelectedValue.ToString()).Count == 0)
                     {
                         DataProvider.RemoveArtist(cbArtist.SelectedValue.ToString());
-                        MessageBox.Show("Artiest verwijderd.");
+                        MessageBox.Show("Artiest verwijderd.", "Succes");
                         FillComboBox();
                     }
                     else
-                        MessageBox.Show("U kunt een artiest niet verwijderen zolang hij nummers heeft.");
+                        MessageBox.Show("U kunt een artiest niet verwijderen zolang hij nummers heeft.", "Ongeldig");
                 }
                 else
                 {
-                    MessageBox.Show("Selecteer A.U.B. een artiest");
+                    MessageBox.Show("Selecteer A.U.B. een artiest", "Ongeldig");
                 }
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 

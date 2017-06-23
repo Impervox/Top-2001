@@ -28,7 +28,7 @@ namespace Top2000
         public EditSongWindow()
         {
             InitializeComponent();
-            cbFirstLetter.ItemsSource = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
             cbFirstLetter.SelectedIndex = 0;
             FillData();
         }
@@ -66,10 +66,14 @@ namespace Top2000
         private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //get the song that will be edited.
+            //fill the fields with this song's information if avaliable.
             foreach (Song song in DataProvider.allSongs)
                 if (song.Title == (string)cbSong.SelectedItem)
                     ThisSong = song;
 
+            txtSong.Text = ThisSong.Title;
+            txtYear.Text = ThisSong.Year.ToString();
+            txtLyrics.Text = ThisSong.Lyrics;
         }
 
         private void txtLyrics_Drop(object sender, DragEventArgs e)
@@ -95,18 +99,18 @@ namespace Top2000
         {
             try
             {
-                if (txtSong.Text != "" && txtYear.Text != "")
+                if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-
-                    //TODO: Edit song procedure, if this song is not in a previous year.
+                    DataProvider.EditSong(ThisSong);
                     MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
+                    FillData();
                 }
                 else
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Ongeldig");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 
@@ -114,17 +118,19 @@ namespace Top2000
         {
             try
             {
-                if (txtSong.Text != "" && txtYear.Text != "")
+                if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
+                    DataProvider.RemoveSong(ThisSong, thisArtist);
                     //TODO: Remove song procedure, if the song is not in a previous year.
-                    MessageBox.Show("Nummer verwijderd.");
+                    MessageBox.Show(String.Format("Nummer {0} van {1} verwijderd.", ThisSong.Title, thisArtist.Name), "Nummer verwijderd");
+                    FillData();
                 }
                 else
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Ongeldig");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 

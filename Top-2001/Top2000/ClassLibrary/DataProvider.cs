@@ -55,7 +55,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Artist artist = new Artist(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+                    Artist artist = new Artist(reader.GetString(0), reader.GetString(2), reader.GetString(3));
                     list.Add(artist);
                 }
                 return list;
@@ -96,6 +96,35 @@ namespace ClassLibrary
             }
         }
 
+        public static void EditSong(Song thisSong)
+        {
+            SqlCommand cmd = new SqlCommand("spEditSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@title", thisSong.Title);
+            cmd.Parameters.AddWithValue("@lyrics", thisSong.Lyrics);
+            cmd.Parameters.AddWithValue("@year", thisSong.Year);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                    {
+                        s.Title = thisSong.Title;
+                        s.Lyrics = thisSong.Lyrics;
+                        s.Year = thisSong.Year;
+                    }
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static DataView loadData(int year, int first, int last)
         {
             SqlCommand cmd = new SqlCommand("spSongsByPosition", conn);
@@ -121,14 +150,39 @@ namespace ClassLibrary
             }
         }
 
+        public static void RemoveSong(Song thisSong, Artist thisArtist)
+        {
+            //if this song is not in top2000 previous years then delete.
+            SqlCommand cmd = new SqlCommand("spRemoveSong", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@song", thisSong.Title);
+            cmd.Parameters.AddWithValue("@artist", thisArtist.Name);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                    if (s.Title == thisSong.Title)
+                        allSongs.Remove(s);
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static void CreateSong(string artist, string title, int year, string lyrics)
         {
             SqlCommand cmd = new SqlCommand("spAddSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ArtistName", artist);
-            cmd.Parameters.AddWithValue("@SongTitle", title);
-            cmd.Parameters.AddWithValue("@Year", year);
-            cmd.Parameters.AddWithValue("@Lyrics", lyrics);
+            cmd.Parameters.AddWithValue("@artist", artist);
+            cmd.Parameters.AddWithValue("@title", title);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@lyrics", lyrics);
             try
             {
                 conn.Open();
@@ -203,7 +257,7 @@ namespace ClassLibrary
 
         public static char[] GetFirstCharacters()
         {
-            List<char> array = new List<char>();
+            string characters = "";
             SqlCommand cmd = new SqlCommand("spGetAllFirstCharactersFromArtists", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             try
@@ -212,9 +266,9 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while(reader.Read())
                 {
-                    array.Add(reader.GetChar(0));
+                    characters += reader.GetString(0);
                 }
-                return array.ToArray();
+                return characters.ToArray();
             }
             catch
             {
@@ -240,6 +294,91 @@ namespace ClassLibrary
                     if (a.Name == artist)
                         allArtists.Remove(a);
                 }
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public static void EditArtist(string name, string newName, string url = null, string biography = null)
+        {
+            SqlCommand cmd = new SqlCommand("spEditArtist", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", name);
+            cmd.Parameters.AddWithValue("@NewArtist", newName);
+            cmd.Parameters.AddWithValue("@Url", url);
+            cmd.Parameters.AddWithValue("@Biography", biography);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+                allArtists = GetAllArtists();
+            }
+        }
+
+        public static void AddRecord(string artist, string song, int position, int year)
+        {
+            SqlCommand cmd = new SqlCommand("spAddRecord", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Artist", artist);
+            cmd.Parameters.AddWithValue("@Song", song);
+            cmd.Parameters.AddWithValue("@Position", position);
+            cmd.Parameters.AddWithValue("@Year", year);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception(errorException);
+            }
+            finally
+            {
+                conn.Close();
+                allYears = GetAllYears();
+            }
+        }
+
+        public static List<int> GetYearsAndSongCount()
+        {
+            List<int> returnValue = new List<int>();
+            List<int> years = new List<int>();
+            List<int> count = new List<int>();
+            SqlCommand cmd = new SqlCommand("spGetYearAndAmountOfNumbers", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    years.Add(reader.GetInt32(0));
+                    count.Add(reader.GetInt32(1));
+                }
+                for (int i = years.OrderBy(x => x).ToList()[0]; i <= DateTime.Today.Year; i++)
+                {
+                    if (!years.Contains(i))
+                        returnValue.Add(i);
+                    else
+                        for (int b = 0; b <= years.Count; b++)
+                            if (count[b] != 2000)
+                                returnValue.Add(i);
+                }
+                return returnValue;
             }
             catch
             {
