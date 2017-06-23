@@ -102,16 +102,15 @@ namespace Top2000
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
                     DataProvider.EditSong(ThisSong);
-                    //TODO: Edit song procedure, if this song is not in a previous year.
                     MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
                     FillData();
                 }
                 else
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Ongeldig");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 
@@ -121,17 +120,17 @@ namespace Top2000
             {
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.RemoveSong(ThisSong);
-                    //TODO: Remove song procedure, if the song is in a previous year.
-                    MessageBox.Show(String.Format("Nummer {0} verwijderd.", ThisSong.Title), "nummer verwijderd");
+                    DataProvider.RemoveSong(ThisSong, thisArtist);
+                    //TODO: Remove song procedure, if the song is not in a previous year.
+                    MessageBox.Show(String.Format("Nummer {0} van {1} verwijderd.", ThisSong.Title, thisArtist.Name), "Nummer verwijderd");
                     FillData();
                 }
                 else
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Ongeldig");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException, "fout");
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 

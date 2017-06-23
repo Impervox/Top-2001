@@ -11,8 +11,8 @@ namespace ClassLibrary
     public static class DataProvider
     {
         //select your database, comment the line you don't use.
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         static List<Record> currentlyShownRecords = new List<Record>();
         public static string errorException = "Er is iets fout gegaan, probeer het later opnieuw.";
         public static List<int> allYears = GetAllYears();
@@ -150,12 +150,13 @@ namespace ClassLibrary
             }
         }
 
-        public static void RemoveSong(Song thisSong)
+        public static void RemoveSong(Song thisSong, Artist thisArtist)
         {
             //if this song is not in top2000 previous years then delete.
             SqlCommand cmd = new SqlCommand("spRemoveSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@song", thisSong.Title);
+            cmd.Parameters.AddWithValue("@artist", thisArtist.Name);
             try
             {
                 conn.Open();
