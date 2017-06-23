@@ -43,7 +43,7 @@ namespace Top2000
         private void FillComboBox()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
-                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString().ToUpper())
                                     select a.Name).OrderBy(x => x).ToList();
             cbArtist.SelectedIndex = 0;
         }
