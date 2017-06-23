@@ -99,11 +99,12 @@ namespace Top2000
         {
             try
             {
-                if (txtSong.Text != "" && txtYear.Text != "")
+                if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
                     DataProvider.EditSong(ThisSong);
                     //TODO: Edit song procedure, if this song is not in a previous year.
                     MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
+                    FillData();
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.");
@@ -118,18 +119,19 @@ namespace Top2000
         {
             try
             {
-                if (txtSong.Text != "" && txtYear.Text != "")
+                if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
                     DataProvider.RemoveSong(ThisSong);
-                    //TODO: Remove song procedure, if the song is not in a previous year.
-                    MessageBox.Show("Nummer verwijderd.");
+                    //TODO: Remove song procedure, if the song is in a previous year.
+                    MessageBox.Show(String.Format("Nummer {0} verwijderd.", ThisSong.Title), "nummer verwijderd");
+                    FillData();
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "fout");
             }
         }
 

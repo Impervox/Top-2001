@@ -178,10 +178,10 @@ namespace ClassLibrary
         {
             SqlCommand cmd = new SqlCommand("spAddSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ArtistName", artist);
-            cmd.Parameters.AddWithValue("@SongTitle", title);
-            cmd.Parameters.AddWithValue("@Year", year);
-            cmd.Parameters.AddWithValue("@Lyrics", lyrics);
+            cmd.Parameters.AddWithValue("@artist", artist);
+            cmd.Parameters.AddWithValue("@title", title);
+            cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@lyrics", lyrics);
             try
             {
                 conn.Open();
