@@ -53,11 +53,6 @@ namespace Top2000
             cbSong.SelectedIndex = 0;
         }
 
-        private void cbSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //TODO: this song should be added, only if song is not already in this year.
-        }
-
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
             DataProvider.AddRecord(cbArtist.SelectedValue.ToString(), cbSong.SelectedValue.ToString(), int.Parse(txtPosition.Text), int.Parse(cbYear.SelectedValue.ToString()));

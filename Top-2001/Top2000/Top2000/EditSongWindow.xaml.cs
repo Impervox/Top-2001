@@ -121,7 +121,6 @@ namespace Top2000
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
                     DataProvider.RemoveSong(ThisSong, thisArtist);
-                    //TODO: Remove song procedure, if the song is not in a previous year.
                     MessageBox.Show(String.Format("Nummer {0} van {1} verwijderd.", ThisSong.Title, thisArtist.Name), "Nummer verwijderd");
                     FillData();
                 }

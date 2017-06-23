@@ -68,7 +68,6 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    //TODO: Edit artist procedure, artist can't have a song in a previous list.(edit: why? onnodige todo?)
                     DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
                     MessageBox.Show("Artiest aangepast.", "Succes");
                     FillComboBox();
