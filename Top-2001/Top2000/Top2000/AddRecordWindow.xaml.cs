@@ -60,14 +60,15 @@ namespace Top2000
 
         private void btnAddRecord_Click(object sender, RoutedEventArgs e)
         {
+            int position = int.Parse(txtPosition.Text);
             if (txtPosition.Text == "" || cbArtist.SelectedValue.ToString() == "" || cbSong.SelectedValue.ToString() == "" || cbYear.SelectedValue.ToString() == "")
                 MessageBox.Show("Please fill in all the fields");
-            else if (int.Parse(txtPosition.Text) < 1 && int.Parse(txtPosition.Text) > 2000)
+            else if (position < 1 || position > 2000)
                 MessageBox.Show("oops");
             else
                 try
                 {
-                    DataProvider.AddRecord(cbArtist.SelectedValue.ToString(), cbSong.SelectedValue.ToString(), int.Parse(txtPosition.Text), int.Parse(cbYear.SelectedValue.ToString()));
+                    DataProvider.AddRecord(cbArtist.SelectedValue.ToString(), cbSong.SelectedValue.ToString(), position, int.Parse(cbYear.SelectedValue.ToString()));
                 }
                 catch
                 {

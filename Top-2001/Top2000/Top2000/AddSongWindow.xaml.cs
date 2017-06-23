@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using ClassLibrary;
+using System.Text.RegularExpressions;
 
 namespace Top2000
 {
@@ -43,7 +44,7 @@ namespace Top2000
         private void FillComboBox()
         {
             cbArtist.ItemsSource = (from a in DataProvider.allArtists
-                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString().ToUpper())
+                                    where a.Name.StartsWith(cbFirstLetter.SelectedValue.ToString())
                                     select a.Name).OrderBy(x => x).ToList();
             cbArtist.SelectedIndex = 0;
         }
@@ -71,10 +72,18 @@ namespace Top2000
         {
             try
             {
-                if(txtSong.Text != "" && txtYear.Text != "")
+                if (txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.CreateSong(cbArtist.SelectedValue.ToString(), txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
-                    MessageBox.Show("Dit nummer is toegevoegd.", "Uitgevoerd.");
+                    string firstChar = Convert.ToString(txtSong.Text[0]);
+                    if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
+                    {
+                        DataProvider.CreateSong(cbArtist.SelectedValue.ToString(), txtSong.Text, int.Parse(txtYear.Text), txtLyrics.Text);
+                        MessageBox.Show("Dit nummer is toegevoegd.", "Uitgevoerd.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please start the title with a number or uppercase letter.");
+                    }
                 }
                 else
                 {

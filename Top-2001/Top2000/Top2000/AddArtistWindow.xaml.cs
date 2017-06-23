@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -66,8 +67,16 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
-                    MessageBox.Show("Artiest toegevoegd.");
+                    string firstChar = Convert.ToString(txtArtist.Text[0]);
+                    if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
+                    {
+                        DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
+                        MessageBox.Show("Artiest toegevoegd.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please start the name with a number or uppercase letter.");
+                    }
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.");
