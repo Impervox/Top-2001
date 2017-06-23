@@ -379,10 +379,9 @@ namespace ClassLibrary
                 }
                 return returnValue;
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
-                //throw new Exception(errorException);
+                throw new Exception(errorException);
             }
             finally
             {
