@@ -61,31 +61,26 @@ namespace Top2000
                     MessageBox.Show("U kunt maximaal 1 bestand in dit veld droppen.", "Error");
             }
         }
-
-        private void txtUrl_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            //TODO: controlle op geldig url (optioneel).
-        }
-        
+                
         private void btnEditArtist_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 if (txtArtist.Text != "")
                 {
-                    //TODO: Edit artist procedure, artist can't have a song in a previous list.
+                    //TODO: Edit artist procedure, artist can't have a song in a previous list.(edit: why? onnodige todo?)
                     DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
-                    MessageBox.Show("Artiest aangepast.");
+                    MessageBox.Show("Artiest aangepast.", "Succes");
                     FillComboBox();
                 }
                 else
                 {
-                    MessageBox.Show("Artiest naam is een verplicht veld.");
+                    MessageBox.Show("Artiest naam is een verplicht veld.", "Ongeldig");
                 }
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 
@@ -98,20 +93,20 @@ namespace Top2000
                     if (DataProvider.SongsOfArtist(cbArtist.SelectedValue.ToString()).Count == 0)
                     {
                         DataProvider.RemoveArtist(cbArtist.SelectedValue.ToString());
-                        MessageBox.Show("Artiest verwijderd.");
+                        MessageBox.Show("Artiest verwijderd.", "Succes");
                         FillComboBox();
                     }
                     else
-                        MessageBox.Show("U kunt een artiest niet verwijderen zolang hij nummers heeft.");
+                        MessageBox.Show("U kunt een artiest niet verwijderen zolang hij nummers heeft.", "Ongeldig");
                 }
                 else
                 {
-                    MessageBox.Show("Selecteer A.U.B. een artiest");
+                    MessageBox.Show("Selecteer A.U.B. een artiest", "Ongeldig");
                 }
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 

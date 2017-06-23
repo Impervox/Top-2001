@@ -10,7 +10,7 @@
         Title="EditArtistWindow" Height="400" Width="800" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="txtArtist" HorizontalAlignment="Left" Height="23" Margin="100,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284"/>
-        <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="100,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284" PreviewTextInput="txtUrl_PreviewTextInput"/>
+        <TextBox x:Name="txtUrl" HorizontalAlignment="Left" Height="23" Margin="100,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284"/>
         <TextBox x:Name="txtBiography" HorizontalAlignment="Left" Height="340" Margin="389,30,5,5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" AllowDrop="True" Width="400" Drop="txtBiography_Drop" PreviewDragOver="txtBiography_PreviewDragOver"/>
         <Button x:Name="btnEditArtist" Content="aanpassen" HorizontalAlignment="Left" Margin="50,300,0,0" VerticalAlignment="Top" Width="75" Click="btnEditArtist_Click"/>
         <Button x:Name="btnRemoveArtist" Content="verwijderen" HorizontalAlignment="Left" Margin="200,300,0,0" VerticalAlignment="Top" Width="75" Click="btnRemoveArtist_Click"/>
