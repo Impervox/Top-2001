@@ -144,13 +144,13 @@ namespace Top2000
                     string firstChar = Convert.ToString(txtSong.Text[0]);
                     if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
                     {
-                        DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, ThisSong);
-                        MessageBox.Show(String.Format("{0} aangepast.", ThisSong.Title));
+                        DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, thisSong);
+                        MessageBox.Show(String.Format("{0} aangepast.", thisSong.Title), "Succes");
                         FillData();
                     }
                     else
                     {
-                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.");
+                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.", "Ongeldig");
                     }
                 }
                 else
