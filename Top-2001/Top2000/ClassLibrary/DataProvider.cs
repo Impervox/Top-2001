@@ -258,10 +258,11 @@ namespace ClassLibrary
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                allSongs.Add(new Song(title, year));
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception(errorException);
+                throw ex;
             }
             finally
             {
@@ -291,11 +292,11 @@ namespace ClassLibrary
             cmd.Parameters.AddWithValue("@Artist", artist);
             cmd.Parameters.AddWithValue("@Biografie", biography);
             cmd.Parameters.AddWithValue("@Url", url);
-            allArtists.Add(new Artist(artist, biography, url));
             try
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                allArtists.Add(new Artist(artist, biography, url));
             }
             catch
             {
