@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         x:Name="windowAddSongs"
-        Title="AddSongWindow" Height="400" Width="800" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+        Title="Nummer Toevoegen" Height="400" Width="800" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
     <Grid>
         <ComboBox x:Name="cbArtist" HorizontalAlignment="Left" Margin="100,64,0,0" VerticalAlignment="Top" Width="284"/>
         <TextBox x:Name="txtSong" HorizontalAlignment="Left" Height="23" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284"/>

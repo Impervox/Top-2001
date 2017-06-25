@@ -136,7 +136,9 @@
       <Name>ClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\top-2000.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\top_2000.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -86,5 +86,10 @@ namespace Top2000
                 MessageBox.Show(DataProvider.errorException);
             }
         }
+
+        private void txtBiography_PreviewDragOver(object sender, DragEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
