@@ -117,7 +117,7 @@ namespace ClassLibrary
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), (byte[])reader.GetValue(2), reader.GetString(3));
+                    Song song = new Song(reader.GetString(0), reader.GetInt32(1), reader.GetString(3), (byte[])reader.GetValue(2));
                     list.Add(song);
                 }
                 return list;
@@ -137,13 +137,19 @@ namespace ClassLibrary
         /// </summary>
         /// <param name="thisSong">The this song.</param>
         /// <exception cref="System.Exception"></exception>
-        public static void EditSong(Song thisSong)
+        public static void EditSong(string year, string title, string lyrics, Song thisSong)
         {
+            int newYear;
+            if (!int.TryParse(year, out newYear))
+                newYear = thisSong.Year;
+            
             SqlCommand cmd = new SqlCommand("spEditSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@title", thisSong.Title);
-            cmd.Parameters.AddWithValue("@lyrics", thisSong.Lyrics);
+            cmd.Parameters.AddWithValue("@newTitle", title);
+            cmd.Parameters.AddWithValue("@lyrics", lyrics);
             cmd.Parameters.AddWithValue("@year", thisSong.Year);
+            cmd.Parameters.AddWithValue("@newYear", newYear);
             try
             {
                 conn.Open();
@@ -151,9 +157,9 @@ namespace ClassLibrary
                 foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
                     if (s.Title == thisSong.Title)
                     {
-                        s.Title = thisSong.Title;
-                        s.Lyrics = thisSong.Lyrics;
-                        s.Year = thisSong.Year;
+                        s.Title = title;
+                        s.Lyrics = lyrics;
+                        s.Year = newYear;
                     }
             }
             catch
@@ -163,6 +169,7 @@ namespace ClassLibrary
             finally
             {
                 conn.Close();
+                allSongs = GetAllSongs();
             }
         }
 
@@ -207,7 +214,6 @@ namespace ClassLibrary
         /// <exception cref="System.Exception"></exception>
         public static void RemoveSong(Song thisSong, Artist thisArtist)
         {
-            //if this song is not in top2000 previous years then delete.
             SqlCommand cmd = new SqlCommand("spRemoveSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@song", thisSong.Title);
@@ -258,11 +264,11 @@ namespace ClassLibrary
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                allSongs.Add(new Song(title, year));
+                allSongs.Add(new Song(title, year, lyrics));
             }
-            catch(Exception ex)
+            catch
             {
-                throw ex;
+                throw new Exception(errorException);
             }
             finally
             {

@@ -97,8 +97,8 @@ namespace Top2000
             //get the song that will be edited.
             //fill the fields with this song's information if avaliable.
             foreach (Song song in DataProvider.allSongs)
-                ThisSong = song; //if (song.Title == (string)cbSong.SelectedItem)
-                    
+                if (song.Title == (string)cbSong.SelectedItem)
+                    ThisSong = song;
 
             txtSong.Text = ThisSong.Title;
             txtYear.Text = ThisSong.Year.ToString();
@@ -140,8 +140,8 @@ namespace Top2000
             {
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.EditSong(ThisSong);
-                    MessageBox.Show(String.Format("{0} aangepast.", txtSong.Text));
+                    DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, ThisSong);
+                    MessageBox.Show(String.Format("{0} aangepast.", ThisSong.Title));
                     FillData();
                 }
                 else

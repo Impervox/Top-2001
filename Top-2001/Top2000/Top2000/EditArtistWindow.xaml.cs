@@ -132,6 +132,8 @@ namespace Top2000
             {
                 MessageBox.Show(DataProvider.errorException, "Error");
             }
+            cbFirstLetter.ItemsSource = DataProvider.GetFirstCharacters();
+            cbFirstLetter.SelectedIndex = 0;
         }
 
         /// <summary>

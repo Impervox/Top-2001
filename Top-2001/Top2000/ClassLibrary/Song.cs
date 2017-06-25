@@ -65,7 +65,7 @@ namespace ClassLibrary
             }
         }
 
-        public Song(string title, int year, byte[] intro = null, string lyrics = null)
+        public Song(string title, int year, string lyrics = null, byte[] intro = null)
         {
             this.title = title;
             this.lyrics = lyrics;
