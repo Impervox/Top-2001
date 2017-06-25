@@ -17,8 +17,8 @@ namespace ClassLibrary
         /// <summary>
         /// The connection
         /// </summary>
-        //static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
-        static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
+        static SqlConnection conn = new SqlConnection(@"Server=(LocalDb)\MSSQLLocalDB;Database=TOP2000;Trusted_Connection=True;");
+        //static SqlConnection conn = new SqlConnection(@"Server=DESKTOP-0ABOFA3\SQLEXPRESS;Database=TOP2000;Trusted_Connection=True;");
         /// <summary>
         /// The currently shown records
         /// </summary>
@@ -113,7 +113,10 @@ namespace ClassLibrary
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                conn.Open();
+                if (conn.State != ConnectionState.Open)
+                {
+                    conn.Open();
+                }
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -122,9 +125,10 @@ namespace ClassLibrary
                 }
                 return list;
             }
-            catch
+            catch(Exception ex)
             {
-                throw new Exception(errorException);
+                throw ex;
+                //throw new Exception(errorException);
             }
             finally
             {
@@ -222,9 +226,11 @@ namespace ClassLibrary
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
-                    if (s.Title == thisSong.Title)
-                        allSongs.Remove(s);
+                List<Song> newSongList = GetAllSongs();
+                if (newSongList.Count != allSongs.Count)
+                    foreach (Song s in allSongs.OrderBy(x => x.Title).ToList())
+                        if (s.Title == thisSong.Title)
+                            allSongs.Remove(s);
             }
             catch
             {
