@@ -98,7 +98,7 @@ namespace Top2000
                     }
                     else
                     {
-                        MessageBox.Show("Begin de naam A.U.B. met een cijfer of een hoofdletters.");
+                        MessageBox.Show("Begin de naam A.U.B. met een cijfer of een hoofdletters.", "Error");
                     }
                 }
                 else

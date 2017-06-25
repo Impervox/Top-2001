@@ -54,7 +54,7 @@ namespace ClassLibrary
             {
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     list.Add(reader.GetInt32(0));
                 }
@@ -125,7 +125,7 @@ namespace ClassLibrary
                 }
                 return list;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
                 //throw new Exception(errorException);
@@ -146,7 +146,7 @@ namespace ClassLibrary
             int newYear;
             if (!int.TryParse(year, out newYear))
                 newYear = thisSong.Year;
-            
+
             SqlCommand cmd = new SqlCommand("spEditSong", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@title", thisSong.Title);

@@ -71,19 +71,19 @@ namespace Top2000
                     if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
                     {
                         DataProvider.CreateArtist(txtArtist.Text.ToString(), txtBiography.Text.ToString(), txtUrl.Text.ToString());
-                        MessageBox.Show("Artiest toegevoegd.");
+                        MessageBox.Show("Artiest toegevoegd.", "Succes");
                     }
                     else
                     {
-                        MessageBox.Show("Begin de naam A.U.B. met een cijfer of hoofdletter.");
+                        MessageBox.Show("Begin de naam A.U.B. met een cijfer of hoofdletter.", "Error");
                     }
                 }
                 else
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Error");
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
     }

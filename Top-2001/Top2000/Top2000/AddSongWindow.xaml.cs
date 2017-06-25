@@ -105,17 +105,17 @@ namespace Top2000
                     }
                     else
                     {
-                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.");
+                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.", "Error");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vul A.U.B. de verplichte velden in.");
+                    MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Error");
                 }
             }
             catch
             {
-                MessageBox.Show(DataProvider.errorException);
+                MessageBox.Show(DataProvider.errorException, "Error");
             }
         }
 

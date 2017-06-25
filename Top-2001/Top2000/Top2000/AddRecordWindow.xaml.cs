@@ -88,9 +88,9 @@ namespace Top2000
         {
             int position = int.Parse(txtPosition.Text);
             if (txtPosition.Text == "" || cbArtist.SelectedValue.ToString() == "" || cbSong.SelectedValue.ToString() == "" || cbYear.SelectedValue.ToString() == "")
-                MessageBox.Show("Vul A.U.B. alle velden in.");
+                MessageBox.Show("Vul A.U.B. alle velden in.", "Error");
             else if (position < 1 || position > 2000)
-                MessageBox.Show("Ongeldige positie, geldige positie is 1 t/m 2000.");
+                MessageBox.Show("Ongeldige positie, geldige positie is 1 t/m 2000.", "Error");
             else
                 try
                 {
@@ -98,7 +98,7 @@ namespace Top2000
                 }
                 catch
                 {
-                    MessageBox.Show("Dit nummer staat al in de lijst of de positie is al bezet.");
+                    MessageBox.Show("Dit nummer staat al in de lijst of de positie is al bezet.", "Error");
                 }
         }
 
