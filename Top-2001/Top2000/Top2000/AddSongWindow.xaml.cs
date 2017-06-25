@@ -105,7 +105,7 @@ namespace Top2000
                     }
                     else
                     {
-                        MessageBox.Show("Please start the title with a number or uppercase letter.");
+                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.");
                     }
                 }
                 else
