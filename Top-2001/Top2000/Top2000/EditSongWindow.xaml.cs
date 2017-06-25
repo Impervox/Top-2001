@@ -32,7 +32,7 @@ namespace Top2000
         /// <summary>
         /// The this song
         /// </summary>
-        Song ThisSong;
+        Song thisSong;
         /// <summary>
         /// Initializes a new instance of the <see cref="EditSongWindow"/> class.
         /// </summary>
@@ -98,11 +98,11 @@ namespace Top2000
             //fill the fields with this song's information if avaliable.
             foreach (Song song in DataProvider.allSongs)
                 if (song.Title == (string)cbSong.SelectedItem)
-                    ThisSong = song;
+                    thisSong = song;
 
-            txtSong.Text = ThisSong.Title;
-            txtYear.Text = ThisSong.Year.ToString();
-            txtLyrics.Text = ThisSong.Lyrics;
+            txtSong.Text = thisSong.Title;
+            txtYear.Text = thisSong.Year.ToString();
+            txtLyrics.Text = thisSong.Lyrics;
         }
 
         /// <summary>
@@ -140,8 +140,8 @@ namespace Top2000
             {
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, ThisSong);
-                    MessageBox.Show(String.Format("{0} aangepast.", ThisSong.Title));
+                    DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, thisSong);
+                    MessageBox.Show(String.Format("{0} aangepast.", thisSong.Title));
                     FillData();
                 }
                 else
@@ -164,8 +164,15 @@ namespace Top2000
             {
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.RemoveSong(ThisSong, thisArtist);
-                    MessageBox.Show(String.Format("Nummer {0} van {1} verwijderd.", ThisSong.Title, thisArtist.Name), "Nummer verwijderd");
+                    bool deletedSucesfully = true;
+                    DataProvider.RemoveSong(thisSong, thisArtist);
+                    foreach (Song song in DataProvider.allSongs)
+                        if (song.Title == thisSong.Title)
+                            deletedSucesfully = false; //het nummer is niet verwijderd.
+                    if(deletedSucesfully)
+                        MessageBox.Show(String.Format("Nummer {0} van {1} verwijderd.", thisSong.Title, thisArtist.Name), "Nummer verwijderd");
+                    else
+                        MessageBox.Show(String.Format("Nummer {0} van {1} is niet verwijderd.", thisSong.Title, thisArtist.Name), "Nummer niet verwijderd");
                     FillData();
                 }
                 else
