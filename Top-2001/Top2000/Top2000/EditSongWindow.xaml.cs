@@ -15,6 +15,7 @@ using System.IO;
 using ClassLibrary;
 using System.Data.SqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Top2000
 {
@@ -140,9 +141,17 @@ namespace Top2000
             {
                 if (cbSong.SelectedIndex > -1 && txtSong.Text != "" && txtYear.Text != "")
                 {
-                    DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, thisSong);
-                    MessageBox.Show(String.Format("{0} aangepast.", thisSong.Title));
-                    FillData();
+                    string firstChar = Convert.ToString(txtSong.Text[0]);
+                    if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
+                    {
+                        DataProvider.EditSong(txtYear.Text, txtSong.Text, txtLyrics.Text, ThisSong);
+                        MessageBox.Show(String.Format("{0} aangepast.", ThisSong.Title));
+                        FillData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Begin de titel A.U.B. met een cijfer of hoofdletter.");
+                    }
                 }
                 else
                     MessageBox.Show("Vul A.U.B. de verplichte velden in.", "Ongeldig");

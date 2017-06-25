@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using ClassLibrary;
+using System.Text.RegularExpressions;
 
 namespace Top2000
 {
@@ -88,9 +89,17 @@ namespace Top2000
             {
                 if (txtArtist.Text != "")
                 {
-                    DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
-                    MessageBox.Show("Artiest aangepast.", "Succes");
-                    FillComboBox();
+                    string firstChar = Convert.ToString(txtArtist.Text[0]);
+                    if (Regex.IsMatch(firstChar, "[A-Z0-9]"))
+                    {
+                        DataProvider.EditArtist(cbArtist.SelectedValue.ToString(), txtArtist.Text, txtUrl.Text, txtBiography.Text);
+                        MessageBox.Show("Artiest aangepast.", "Succes");
+                        FillComboBox();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Begin de naam A.U.B. met een cijfer of een hoofdletters.");
+                    }
                 }
                 else
                 {
